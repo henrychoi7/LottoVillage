@@ -1,0 +1,40 @@
+{
+  "name": "lotto_village",
+  "version": "1.0.0",
+  "description": "server for lotto_village server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "MariaDB"
+  ],
+  "author": "JJSoft",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "dateformat": "^2.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "iconv-lite": "^0.4.18",
+    "jsonwebtoken": "^7.4.3",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "node-schedule": "^1.2.4",
+    "pm2": "^2.6.1",
+    "random-int-array": "^1.0.0",
+    "request": "^2.81.0",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jung2929/LottoVillage.git"
+  }
+}
