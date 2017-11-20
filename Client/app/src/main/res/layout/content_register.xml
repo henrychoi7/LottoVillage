@@ -19,19 +19,19 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <com.jjosft.android.lottovillage.base.ClearEditText
+            <com.example.wschd.client.base.ClearEditText
                 android:id="@+id/register_edit_name"
                 style="@style/DefaultEditText"
                 android:hint="@string/name"
                 android:inputType="text" />
 
-            <com.jjosft.android.lottovillage.base.PasswordEditText
+            <com.example.wschd.client.base.PasswordEditText
                 android:id="@+id/register_edit_password"
                 style="@style/DefaultEditText"
                 android:hint="@string/password"
                 android:inputType="textPassword" />
 
-            <com.jjosft.android.lottovillage.base.PasswordEditText
+            <com.example.wschd.client.base.PasswordEditText
                 android:id="@+id/register_edit_password_confirm"
                 style="@style/DefaultEditText"
                 android:hint="@string/confirm_password"

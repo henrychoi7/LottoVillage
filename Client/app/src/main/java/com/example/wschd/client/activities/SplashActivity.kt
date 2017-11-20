@@ -9,6 +9,7 @@ import com.example.wschd.client.R
 import com.example.wschd.client.base.BaseActivity
 import com.example.wschd.client.base.BaseApplication
 
+
 class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

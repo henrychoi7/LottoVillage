@@ -8,10 +8,11 @@ import android.os.Bundle
 import android.telephony.SmsMessage
 import com.example.wschd.client.activities.RegisterActivity
 
+
 class SmsBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == "android.provider.Telephony.SMS_RECEIVED") {
-            val bundle: Bundle? = intent.extras  // Bundle객체에 문자를 받아온다
+            val bundle: Bundle? = intent.extras  // Bundle 객체에 문자를 받아온다
             if (bundle != null) {
                 val pduObjects = bundle.get("pdus") as Array<*>
                 for (i in pduObjects.indices) {

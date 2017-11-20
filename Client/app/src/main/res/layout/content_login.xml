@@ -21,7 +21,7 @@
             android:hint="@string/phone_number"
             android:inputType="phone" />
 
-        <com.jjosft.android.lottovillage.base.PasswordEditText
+        <com.example.wschd.client.base.PasswordEditText
             android:id="@+id/login_edit_password"
             style="@style/DefaultEditText"
             android:hint="@string/password"

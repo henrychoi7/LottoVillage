@@ -10,6 +10,7 @@ import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.example.wschd.client.R
 import com.example.wschd.client.interfaces.RetrofitInterface
+import kotlinx.android.synthetic.main.progress_loading.*
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -100,7 +101,7 @@ open class BaseApplication : Application() {
             progressDialog = null
         }
     }
-
+/*
     fun setLottoNumberBackground(targetTextView: TextView, lottoNumber: Int) {
         targetTextView.text = lottoNumber.toString()
         when (lottoNumber) {
@@ -111,4 +112,5 @@ open class BaseApplication : Application() {
             in 41..45 -> targetTextView.setBackgroundResource(R.drawable.attr_lotto_number_background_green)
         }
     }
+*/
 }
