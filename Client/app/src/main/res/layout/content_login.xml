@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DefaultParentLayout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/login_edit_phone_number"
+            style="@style/DefaultEditText"
+            android:drawableStart="@drawable/ic_phone_24dp"
+            android:hint="@string/phone_number"
+            android:inputType="phone" />
+
+        <com.jjosft.android.lottovillage.base.PasswordEditText
+            android:id="@+id/login_edit_password"
+            style="@style/DefaultEditText"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <CheckBox
+            android:id="@+id/login_check_auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/auto_login"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/login_button_login"
+            style="@style/ConfirmButton"
+            android:onClick="customOnClick"
+            android:text="@string/login" />
+    </LinearLayout>
+</RelativeLayout>

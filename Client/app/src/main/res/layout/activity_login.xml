@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
     android:fitsSystemWindows="true"
-    tools:context=".client.LoginActivity">
+    tools:context=".activities.LoginActivity">
 
     <android.support.design.widget.AppBarLayout style="@style/DefaultAppBarLayout">
 

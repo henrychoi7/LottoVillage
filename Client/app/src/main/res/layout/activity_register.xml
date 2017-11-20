@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
     android:fitsSystemWindows="true"
-    tools:context=".client.RegisterActivity">
+    tools:context=".activities.RegisterActivity">
 
     <android.support.design.widget.AppBarLayout
         style="@style/DefaultAppBarLayout">

@@ -90,12 +90,13 @@ class LoginActivity : BaseActivity() {
                                 sharedPreferencesEditor.putBoolean(BaseApplication.AUTO_LOGIN, login_check_auto_login.isChecked)
                                 sharedPreferencesEditor.apply()
                             }
+                            /*
                             startActivity(Intent(applicationContext, MainActivity::class.java)
                                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK) // 기존에 쌓여있던 스택을 모두 없앤다.
-                                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) // 새로 생성한 엑티비티가 root 가 된다.
+                                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) // 새로 생성한 액티비티가 root 가 된다.
                         } else {
                             Toast.makeText(applicationContext, t.errorMessage, Toast.LENGTH_SHORT).show()
-                        }
+                        }*/
                     }
 
                     override fun onError(e: Throwable) {
