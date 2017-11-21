@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultParentLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/lotto_spinner_rounds"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/lotto_button_retrieve"
+                style="@style/ParticipateButton"
+                android:text="@string/retrieve" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:background="@drawable/attr_layout_normal"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/real_lotto_winning_numbers" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_rounds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/real_lotto_result"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lotto_text_winning_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/default_winning_date" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winning_numbers" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/bonus_number" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/attr_layout_numbers"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_1"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_yellow"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_blue"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_3"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_red"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_4"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_green"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_5"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_grey"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_6"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_blue"
+                    android:text="0" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add"
+                    app:srcCompat="@drawable/ic_add_black_24dp" />
+
+                <TextView
+                    android:id="@+id/lotto_text_real_lotto_bonus"
+                    style="@style/DefaultLottoNumberText"
+                    android:background="@drawable/attr_lotto_number_background_red"
+                    android:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lotto_recycler_view_prize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

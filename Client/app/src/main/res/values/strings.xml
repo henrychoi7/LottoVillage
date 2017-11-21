@@ -30,6 +30,37 @@
     <string name="title_store">Store</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Home Strings -->
+    <string name="one_hour_lotto_number">한시간 단위 로또빌리지 번호</string>
+    <string name="six_hour_lotto_number">여섯시간 단위 로또빌리지 번호</string>
+    <string name="twelve_hour_lotto_number">열두시간 단위 로또빌리지 번호</string>
+    <string name="participating_time">참여 시간 : </string>
+    <string name="participate_lotto_village">응모하기</string>
+    <string name="empty_participation_lotto_village">아직 로또에 참여하지 않았습니다.</string>
+    <string name="empty_winning_lotto_village">당첨 번호가 투표되지 않았습니다.</string>
+    <string name="participating_lotto">로또에 참여 중 입니다.</string>
+    <string name="request_detail_of_participation">로또빌리지 번호를 불러오는 중 입니다.</string>
+    <string name="my_point">나의 포인트 : </string>
+    <string name="request_my_point">나의 포인트를 불러오는 중 입니다.</string>
+    <string name="drawing_time">로또빌리지 응모 일자 : </string>
+
+    <!-- Lotto Strings -->
+    <string name="request_lotto_rounds">로또 회차 자료를 불러오는 중 입니다.</string>
+    <string name="request_detail_of_lotto">실제 로또 번호를 불러오는 중 입니다.</string>
+    <string name="real_lotto_winning_numbers">실제 로또 당첨번호</string>
+    <string name="real_lotto_result">회 당첨결과</string>
+    <string name="default_winning_date">(YYYY년 MM월 DD일 추첨)</string>
+    <string name="winning_numbers">당첨번호</string>
+    <string name="bonus_number">보너스</string>
+    <string name="first_prize">1등</string>
+    <string name="second_prize">2등</string>
+    <string name="third_prize">3등</string>
+    <string name="fourth_prize">4등</string>
+    <string name="fifth_prize">5등</string>
+    <string name="total_prize">등위별 총 당첨금액</string>
+    <string name="total_number">당첨게임 수</string>
+    <string name="per_prize">1게임당 당첨금액</string>
+
     <!-- SMS Content -->
     <string name="message_front">(LottoVillage) 인증번호 [</string>
     <string name="message_back">] 를 입력해주세요.</string>

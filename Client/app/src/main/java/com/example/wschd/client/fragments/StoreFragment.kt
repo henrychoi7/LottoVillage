@@ -13,7 +13,6 @@ class StoreFragment : Fragment() {
     private val mCompositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        //val view: View = inflater.inflate(R.layout.fragment_store, container, false)
 
         return inflater.inflate(R.layout.fragment_store, container, false)
     }

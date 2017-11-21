@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_10">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10">
+
+            <TextView
+                android:id="@+id/home_text_participation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/one_hour_lotto_number" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/home_text_participation_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/empty_participation_lotto_village" />
+
+                <LinearLayout
+                    android:id="@+id/home_linear_layout_participation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/attr_layout_numbers"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/home_text_participation_1"
+                        style="@style/DefaultLottoNumberText" />
+
+                    <TextView
+                        android:id="@+id/home_text_participation_2"
+                        style="@style/DefaultLottoNumberText" />
+
+                    <TextView
+                        android:id="@+id/home_text_participation_3"
+                        style="@style/DefaultLottoNumberText" />
+
+                    <TextView
+                        android:id="@+id/home_text_participation_4"
+                        style="@style/DefaultLottoNumberText" />
+
+                    <TextView
+                        android:id="@+id/home_text_participation_5"
+                        style="@style/DefaultLottoNumberText" />
+
+                    <TextView
+                        android:id="@+id/home_text_participation_6"
+                        style="@style/DefaultLottoNumberText" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/participating_time" />
+
+                <TextView
+                    android:id="@+id/home_text_participating_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    tools:text="2017-09-03 01:41" />
+
+                <Button
+                    android:id="@+id/home_button_participation_lotto"
+                    style="@style/ParticipateButton" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

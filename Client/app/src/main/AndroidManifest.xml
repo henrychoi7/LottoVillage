@@ -39,6 +39,13 @@
         <activity
             android:name=".activities.LoginActivity"
             android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.InformationActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
     </application>
 
 </manifest>

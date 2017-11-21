@@ -29,8 +29,15 @@
     <style name="DefaultAppBarLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <!--<item name="android:layout_margin">@dimen/margin_10</item>-->
-        <!--<item name="android:background">@drawable/attr_layout_title</item>-->
+    </style>
+
+    <style name="DefaultLottoNumberText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/margin_1</item>
     </style>
 
     <style name="DefaultEditText">
@@ -41,6 +48,14 @@
         <item name="android:textColorHint">@color/blackText</item>
         <item name="android:layout_marginTop">@dimen/margin_5</item>
         <item name="android:layout_marginBottom">@dimen/margin_5</item>
+    </style>
+
+    <style name="ParticipateButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/attr_button_complete</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">@string/participate_lotto_village</item>
     </style>
 
     <style name="ConfirmButton">

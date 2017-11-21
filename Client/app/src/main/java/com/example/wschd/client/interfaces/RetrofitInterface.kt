@@ -19,4 +19,36 @@ interface RetrofitInterface {
 
     @GET("my_point")
     fun getMyPoint(): Observable<Model.SingleIntResponse>
+
+    @GET("details_of_point_history")
+    fun getDetailsOfPointHistory(@Query("saving_time") savingTime : String) : Observable<Model.PointHistoryResponse>
+
+    @GET("lotto_rounds")
+    fun getLottoRounds(): Observable<Model.SingleIntResponse>
+
+    @GET("details_of_lotto")
+    fun getDetailsOfLotto(@Query("rounds") rounds : String): Observable<Model.LottoResponse>
+
+    @GET("details_of_participation")
+    fun getDetailsOfParticipation(@Query("event_type") eventType : String,
+                                  @Query("event_date") eventDate : String,
+                                  @Query("event_number") eventNumber : String,
+                                  @Query("confirm_status") isConfirmStatus : Boolean): Observable<Model.ParticipationResponse>
+
+    @GET("details_of_one_day_participation")
+    fun getDetailsOfOneDayParticipation(@Query("event_date") eventDate : String): Observable<Model.ParticipationHistoryResponse>
+
+    @GET("details_of_all_participation")
+    fun getDetailsOfAllParticipation(): Observable<Model.ParticipationResponse>
+
+    @GET("details_of_winning_info")
+    fun getDetailsOfWinningInfo(@Query("event_type") eventType : String,
+                                @Query("event_date") eventDate : String,
+                                @Query("event_number") eventNumber : String): Observable<Model.WinningInfoResponse>
+
+    @GET("details_of_all_winning_info")
+    fun getDetailsOfAllWinningInfo(): Observable<Model.WinningInfoResponse>
+
+    @POST("participation")
+    fun postParticipation(@Body params: RequestBody): Observable<Model.DefaultResponse>
 }

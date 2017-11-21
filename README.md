@@ -57,23 +57,23 @@
 - **모바일 클라이언트 (_/res/ 제외_)**
 
 ```
-/activities/LoginActivity
-/activities/MainActivity
-/activities/RegisterActivity
-/activities/SplashActivity
+/activities/LoginActivity.kt
+/activities/MainActivity.kt
+/activities/RegisterActivity.kt
+/activities/SplashActivity.kt
 
-/base/AddCookiesInterceptor
-/base/BaseActivity
-/base/BaseApplication
-/base/ClearEditText
-/base/PasswordEditText
-/base/ReceivedCookiesInterceptor
+/base/AddCookiesInterceptor.kt
+/base/BaseActivity.kt
+/base/BaseApplication.kt
+/base/ClearEditText.kt
+/base/PasswordEditText.kt
+/base/ReceivedCookiesInterceptor.kt
 
-/interfaces/RetrofitInterface
+/interfaces/RetrofitInterface.kt
 
 /model/DataClasses.kt
 
-/services/SmsBroadcastReceiver
+/services/SmsBroadcastReceiver.kt
 ```
 <br>
 
@@ -117,19 +117,25 @@
 - **모바일 클라이언트 (_/res/ 제외_)**
 
 ```
-/activities/InformationActivity
-/activities/MainActivity
+/activities/InformationActivity.kt
+/activities/MainActivity.kt
+/activities/PointHistory.kt
+/activities/PurchaseHistoryActivity.kt
 
-/base/AddCookiesInterceptor
-/base/BaseActivity
-/base/BaseApplication
-/base/ClearEditText
-/base/PasswordEditText
-/base/ReceivedCookiesInterceptor
+/adapters/LottoAdapter.kt
+/adapters/ParticipationAdapter.kt
+/adapters/WinningInfoAdapter.kt
 
-/interfaces/RetrofitInterface
+/fragments/HomeFragment.kt
+/fragments/LottoFragment.kt
+/fragments/StoreFragment.kt
 
-/model/DataClasses.kt
+/base/AddCookiesInterceptor.kt
+/base/BaseActivity.kt
+/base/BaseApplication.kt
+/base/ClearEditText.kt
+/base/PasswordEditText.kt
+/base/ReceivedCookiesInterceptor.kt
 
-/services/SmsBroadcastReceiver
+/assets/
 ```
