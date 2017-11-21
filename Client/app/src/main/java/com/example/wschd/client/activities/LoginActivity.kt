@@ -34,7 +34,7 @@ class LoginActivity : BaseActivity() {
         setSupportActionBar(login_toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        // SharedPreferences 를 통하여 자동로그인 여부 확인
+        // SharedPreferences 를 통하여 자동 로그인 여부 확인
         mIsCheckedAutoLogin = mSharedPreferences.getBoolean(BaseApplication.AUTO_LOGIN, false)
         login_check_auto_login.isChecked = mIsCheckedAutoLogin
 

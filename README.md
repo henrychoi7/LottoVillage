@@ -17,9 +17,7 @@
 
 ## 3\. 개발 진도표
 
-### v0.3 (_30%_)
-
-<br>
+## v0.3 (_30%_)
 
 - **웹 서버**
 
@@ -63,6 +61,64 @@
 /activities/MainActivity
 /activities/RegisterActivity
 /activities/SplashActivity
+
+/base/AddCookiesInterceptor
+/base/BaseActivity
+/base/BaseApplication
+/base/ClearEditText
+/base/PasswordEditText
+/base/ReceivedCookiesInterceptor
+
+/interfaces/RetrofitInterface
+
+/model/DataClasses.kt
+
+/services/SmsBroadcastReceiver
+```
+<br>
+
+## v0.5 (_50%_)
+
+- **웹 서버**
+
+```
+/app/controllers/index.server.controller.js
+/app/controllers/product.server.controller.js
+/app/controllers/user.server.controller.js
+
+/app/routes/index.server.route.js
+/app/routes/product.server.route.js
+/app/routes/user.server.route.js
+
+/views/index.ejs
+
+/config/express.js
+/config/winston.js
+
+/index.js
+/package.json
+/package-lock.json
+```
+
+<br>
+
+- **웹 클라이언트 (/assets/, DB 연동 제외)**
+
+```
+/lottoVillage_login.html
+/lottoVillage_main.html
+/lottoVillage_rewardAdmin.html
+/lottoVillage_rewardModify.html
+/lottoVillage_rewardRegist.html
+```
+
+<br>
+
+- **모바일 클라이언트 (_/res/ 제외_)**
+
+```
+/activities/InformationActivity
+/activities/MainActivity
 
 /base/AddCookiesInterceptor
 /base/BaseActivity
