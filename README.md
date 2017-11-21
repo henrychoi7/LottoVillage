@@ -21,7 +21,7 @@
 
 <br>
 
-- **웹**
+- **웹 서버**
 
 ```
 /app/controllers/index.server.controller.js
@@ -44,7 +44,19 @@
 
 <br>
 
-- **모바일 (_/res/ 제외_)**
+- **웹 클라이언트 (/assets/, DB 연동 제외)**
+
+```
+/lottoVillage_login.html
+/lottoVillage_main.html
+/lottoVillage_rewardAdmin.html
+/lottoVillage_rewardModify.html
+/lottoVillage_rewardRegist.html
+```
+
+<br>
+
+- **모바일 클라이언트 (_/res/ 제외_)**
 
 ```
 /activities/LoginActivity

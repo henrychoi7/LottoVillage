@@ -1,345 +1,347 @@
 <!DOCTYPE html>
 <!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-focus" lang="en">
+<!--<![endif]-->
+
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <title>Lotto Village 관리자용 상품관리 페이지</title>
+  <title>Lotto Village 관리자용 상품관리 페이지</title>
 
-    <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
-    <meta name="author" content="pixelcave">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+  <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
+  <meta name="author" content="pixelcave">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
 
-    <!-- Icons -->
-    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
+  <!-- Icons -->
+  <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+  <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
 
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-192x192.png" sizes="192x192">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
-    <!-- END Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
+  <!-- END Icons -->
 
-    <!-- Web fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+  <!-- Web fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
-    <!-- Page JS Plugins CSS go here -->
+  <!-- Page JS Plugins CSS go here -->
 
-    <!-- Bootstrap and OneUI CSS framework -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
+  <!-- Bootstrap and OneUI CSS framework -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
 </head>
+
 <body>
-    <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
-        <!-- Side Overlay-->
-        <aside id="side-overlay">
-            <!-- Side Overlay Scroll Container -->
-            <div id="side-overlay-scroll">
-                <!-- Side Header -->
-                <div class="side-header side-content">
-                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                    <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+  <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+    <!-- Side Overlay-->
+    <aside id="side-overlay">
+      <!-- Side Overlay Scroll Container -->
+      <div id="side-overlay-scroll">
+        <!-- Side Header -->
+        <div class="side-header side-content">
+          <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+          <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
                         <i class="fa fa-times"></i>
                     </button>
-                    <span class="font-w600 push-10-l">관리자 아이디</span>
-                </div>
-                <!-- END Side Header -->
+          <span class="font-w600 push-10-l">관리자 아이디</span>
+        </div>
+        <!-- END Side Header -->
 
-                <!-- Side Content -->
-                <div class="side-content remove-padding-t">
-                    <!-- Block -->
-                    <div class="block pull-r-l">
-                        <div class="block-header bg-gray-lighter">
-                            <ul class="block-options">
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                </li>
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">Block</h3>
-                        </div>
-                        <div class="block-content">
-                            <p>...</p>
-                        </div>
-                    </div>
-                    <!-- END Block -->
-                </div>
-                <!-- END Side Content -->
+        <!-- Side Content -->
+        <div class="side-content remove-padding-t">
+          <!-- Block -->
+          <div class="block pull-r-l">
+            <div class="block-header bg-gray-lighter">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                </li>
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Block</h3>
             </div>
-            <!-- END Side Overlay Scroll Container -->
-        </aside>
-        <!-- END Side Overlay -->
+            <div class="block-content">
+              <p>...</p>
+            </div>
+          </div>
+          <!-- END Block -->
+        </div>
+        <!-- END Side Content -->
+      </div>
+      <!-- END Side Overlay Scroll Container -->
+    </aside>
+    <!-- END Side Overlay -->
 
-<!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" 
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="logoutModalLabel" align="center">로그아웃 하시겠습니까?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="logoutModalLabel" align="center">로그아웃 하시겠습니까?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
               </button>
           </div>
           <div class="modal-body" align="center">
             <a class="btn btn-primary" href="lottoVillage_login.html">예</a>
             <button class="btn btn-secondary" type="button" data-dismiss="modal">아니오</button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
 
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <!-- Sidebar Scroll Container -->
-            <div id="sidebar-scroll">
-                <!-- Sidebar Content -->
-                <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
-                <div class="sidebar-content">
-                    <!-- Side Header -->
-                    <div class="side-header side-content bg-white-op">
-                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                        <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <!-- Sidebar Scroll Container -->
+      <div id="sidebar-scroll">
+        <!-- Sidebar Content -->
+        <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+        <div class="sidebar-content">
+          <!-- Side Header -->
+          <div class="side-header side-content bg-white-op">
+            <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+            <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
                             <i class="fa fa-times"></i>
                         </button>
-                        <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+            <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
 
-                        <a class="h5 text-white" href="lottoVillage_main.html">
-                         <span class="h4 font-w600 sidebar-mini-hide">L</span></i> 
+            <a class="h5 text-white" href="lottoVillage_main.html">
+                         <span class="h4 font-w600 sidebar-mini-hide">L</span></i>
                          <i class="fa fa-circle-o-notch text-primary"></i><span class="h4 font-w600 sidebar-mini-hide">TT</span></i> <i class="fa fa-circle-o-notch text-primary"></i><span class="h4 font-w600 sidebar-mini-hide"> VILLAGE</span>
                      </a>
-                 </div>
-                 <!-- END Side Header -->
+          </div>
+          <!-- END Side Header -->
 
-                 <!-- Side Content -->
-                 <div class="side-content side-content-full">
-                    <ul class="nav-main">
-                        <li>
-                            <a class="active" href="#"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Administrator</span></a>
-                        </li>
-                        <li class="nav-main-heading"><span class="sidebar-mini-hide">관리</span></li>
-                        <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wrench"></i><span class="sidebar-mini-hide">관리</span></a>
-                            <ul>
-                                <li>
-                                    <a href="lottoVillage_userAdmin.html">회원관리</a>
-                                </li>
-                                <li>
-                                    <a href="lottoVillage_rewardAdmin.html">Reward 상품관리</a>
-                                </li>
-                            </ul>
-                            <a data-toggle="modal" data-target="#logoutModal" href="#"><i class="si si-logout"></i>로그아웃</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END Side Content -->
-            </div>
-            <!-- Sidebar Content -->
+          <!-- Side Content -->
+          <div class="side-content side-content-full">
+            <ul class="nav-main">
+              <li>
+                <a class="active" href="#"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Administrator</span></a>
+              </li>
+              <li class="nav-main-heading"><span class="sidebar-mini-hide">관리</span></li>
+              <li>
+                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wrench"></i><span class="sidebar-mini-hide">관리</span></a>
+                <ul>
+                  <li>
+                    <a href="lottoVillage_userAdmin.html">회원관리</a>
+                  </li>
+                  <li>
+                    <a href="lottoVillage_rewardAdmin.html">Reward 상품관리</a>
+                  </li>
+                </ul>
+                <a data-toggle="modal" data-target="#logoutModal" href="#"><i class="si si-logout"></i>로그아웃</a>
+              </li>
+            </ul>
+          </div>
+          <!-- END Side Content -->
         </div>
-        <!-- END Sidebar Scroll Container -->
+        <!-- Sidebar Content -->
+      </div>
+      <!-- END Sidebar Scroll Container -->
     </nav>
     <!-- END Sidebar -->
 
     <!-- Header -->
     <header id="header-navbar" class="content-mini content-mini-full">
-        <!-- Header Navigation Right -->
-        <ul class="nav-header pull-right">
-            <li>
-                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                <button class="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" type="button">
+      <!-- Header Navigation Right -->
+      <ul class="nav-header pull-right">
+        <li>
+          <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+          <button class="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" type="button">
                     <i class="fa fa-tasks"></i>
                 </button>
-            </li>
-        </ul>
-        <!-- END Header Navigation Right -->
+        </li>
+      </ul>
+      <!-- END Header Navigation Right -->
 
-        <!-- Header Navigation Left -->
+      <!-- Header Navigation Left -->
 
-        <!-- END Header Navigation Left -->
+      <!-- END Header Navigation Left -->
     </header>
     <!-- END Header -->
 
     <!-- Main Container -->
     <main id="main-container">
-        <!-- Page Header -->
-        <div class="content bg-gray-lighter">
-            <div class="row items-push">
-                <div class="col-sm-7">
-                    <h1 class="page-heading">
+      <!-- Page Header -->
+      <div class="content bg-gray-lighter">
+        <div class="row items-push">
+          <div class="col-sm-7">
+            <h1 class="page-heading">
                         상품관리 <small>Reward Admin</small>
                     </h1>
-                </div>
-                <div class="col-sm-5 text-right hidden-xs">
-                    <ol class="breadcrumb push-10-t">
-                        <li>ADMIN</li>
-                        <li>상품관리</li>
-                    </ol>
-                </div>
-            </div>
+          </div>
+          <div class="col-sm-5 text-right hidden-xs">
+            <ol class="breadcrumb push-10-t">
+              <li>ADMIN</li>
+              <li>상품관리</li>
+            </ol>
+          </div>
         </div>
-        <!-- END Page Header -->
+      </div>
+      <!-- END Page Header -->
 
-        <!-- Page Content -->
-        <div class="content">
-            <!-- My Block -->
-            <a href="lottoVillage_rewardRegist.html"><span class="btn btn-default">상품 등록</span></a>
-            <div class="block">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-3">
+      <!-- Page Content -->
+      <div class="content">
+        <!-- My Block -->
+        <a href="lottoVillage_rewardRegist.html"><span class="btn btn-default">상품 등록</span></a>
+        <div class="block">
+          <div class="row">
+            <div class="col-sm-6 col-lg-3">
 
-                        <a class="block block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">초코파이</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">2000p</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td>No. <strong>1</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Company <strong>오리온</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Description <strong>이 상품은 ...</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
-                                <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-
-                        <a class="block block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">신라면</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">1000p</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td>No. <strong>2</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Company <strong>농심</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Description <strong>이 상품은 ...</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
-                                <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
-                            </div>
-                        </a>
-                        
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-
-                        <a class="block block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">바나나맛 우유</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">1500p</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td>No. <strong>3</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Company <strong>빙그레</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Description <strong>이 상품은 ...</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
-                                <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-
-                        <a class="block block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">새우깡</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">1000p</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td>No. <strong>4</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Company <strong>농심</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Description <strong>이 상품은 ...</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
-                                <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
-                            </div>
-                        </a>
-
-                    </div>
-
+              <a class="block block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-header">
+                  <h3 class="block-title">초코파이</h3>
                 </div>
+                <div class="block-content block-content-full bg-gray-lighter">
+                  <div class="h1 font-w700 push-10">2000p</div>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>No. <strong>1</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Company <strong>오리온</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Description <strong>이 상품은 ...</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="block-content block-content-mini block-content-full bg-gray-lighter">
+                  <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
+                  <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
+                </div>
+              </a>
 
             </div>
-            <!-- END My Block -->
+            <div class="col-sm-6 col-lg-3">
+
+              <a class="block block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-header">
+                  <h3 class="block-title">신라면</h3>
+                </div>
+                <div class="block-content block-content-full bg-gray-lighter">
+                  <div class="h1 font-w700 push-10">1000p</div>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>No. <strong>2</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Company <strong>농심</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Description <strong>이 상품은 ...</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="block-content block-content-mini block-content-full bg-gray-lighter">
+                  <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
+                  <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
+                </div>
+              </a>
+
+            </div>
+            <div class="col-sm-6 col-lg-3">
+
+              <a class="block block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-header">
+                  <h3 class="block-title">바나나맛 우유</h3>
+                </div>
+                <div class="block-content block-content-full bg-gray-lighter">
+                  <div class="h1 font-w700 push-10">1500p</div>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>No. <strong>3</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Company <strong>빙그레</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Description <strong>이 상품은 ...</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="block-content block-content-mini block-content-full bg-gray-lighter">
+                  <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
+                  <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
+                </div>
+              </a>
+
+            </div>
+            <div class="col-sm-6 col-lg-3">
+
+              <a class="block block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-header">
+                  <h3 class="block-title">새우깡</h3>
+                </div>
+                <div class="block-content block-content-full bg-gray-lighter">
+                  <div class="h1 font-w700 push-10">1000p</div>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>No. <strong>4</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Company <strong>농심</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Description <strong>이 상품은 ...</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="block-content block-content-mini block-content-full bg-gray-lighter">
+                  <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
+                  <span class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
-        <!-- END Page Content -->
+        <!-- END My Block -->
+      </div>
+      <!-- END Page Content -->
     </main>
     <!-- END Main Container -->
 
     <!-- Modify Modal-->
-    <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabel" 
-    aria-hidden="true">
+    <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="modifyModalLabel" align="center">상품을 수정하시겠습니까?</h5>
+            <h5 class="modal-title" id="modifyModalLabel" align="center">상품을 수정하시겠습니까?</h5>
           </div>
           <div class="modal-body" align="center">
             <a class="btn btn-primary" href="lottoVillage_rewardModify.html">예</a>
@@ -350,13 +352,12 @@
     </div>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" 
-    aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel" align="center">정말로 삭제 하시겠습니까?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="deleteModalLabel" align="center">정말로 삭제 하시겠습니까?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
               </button>
           </div>
@@ -370,17 +371,18 @@
 
     <!-- Footer -->
     <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
-        <div class="pull-left">
-            <a class="font-w600" href="http://goo.gl/6LF10W" target="_blank">Lotto Village</a> &copy; <span class="js-year-copy"></span>
-        </div>
+      <div class="pull-left">
+        <a class="font-w600" href="http://goo.gl/6LF10W" target="_blank">Lotto Village</a> &copy; <span class="js-year-copy"></span>
+      </div>
     </footer>
     <!-- END Footer -->
-</div>
-<!-- END Page Container -->
+  </div>
+  <!-- END Page Container -->
 
-<!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-<script src="assets/js/oneui.min.js"></script>
+  <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+  <script src="assets/js/oneui.min.js"></script>
 
-<!-- Page JS Plugins + Page JS Code -->
+  <!-- Page JS Plugins + Page JS Code -->
 </body>
+
 </html>
