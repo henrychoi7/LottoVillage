@@ -18,24 +18,28 @@
 
   <!-- Bootstrap and OneUI CSS framework -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" id="css-main" href="assets/css/oneui.css">
-  <link rel="stylesheet" href="assets/css/lottovillage_login.css">
+  <!--<link rel="stylesheet" id="css-main" href="assets/css/oneui.css">-->
+  <link rel="stylesheet" id="css-main" href="assets/css/main.css">
+
+  <!-- my CSS -->
+  <link rel="stylesheet" href="assets/css/landing.css">
+
 </head>
 
 <body>
   <!-- Login Content -->
-  <div class="bg-white pulldown">
+  <div class="bg-landing">
+    <div class="text-center">
+      <img src="assets/img/photos/logo.png">
+      <p class="text-muted push-15-t">Lotto Village 관리자 로그인 페이지</p>
+    </div>
+  </div>
+  <div class="bg-white ">
     <div class="content content-boxed overflow-hidden">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-          <div class="push-30-t push-50 animated fadeIn">
-            <!-- Login Title -->
-            <div class="text-center">
-              <p class="text-muted push-15-t">Lotto Village 관리자 로그인 페이지</p>
-            </div>
-            <!-- END Login Title -->
-
-            <form class="js-validation-login form-horizontal push-30-t" action="lottovillage_main.html" method="post">
+          <div class="push-50 animated fadeIn">
+            <form class="js-validation-login form-horizontal" action="lottovillage_main.html" method="post">
               <div class="form-group">
                 <div class="col-xs-12">
                   <div class="form-material form-material-primary floating">
@@ -75,7 +79,7 @@
   <!-- END Login Content -->
 
   <!-- Login Footer -->
-  <div class="pulldown push-30-t text-center animated fadeInUp">
+  <div class="footer text-center animated fadeInUp">
     <small class="text-muted"><span class="js-year-copy"></span> &copy; Lotto Village</small>
   </div>
   <!-- END Login Footer -->

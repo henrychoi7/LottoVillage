@@ -46,13 +46,14 @@ module.exports = function () {
         secret: 'developmentSessionSecret'
     }));*/
 
-    app.set('views', process.cwd() + '/app/views');
+    // 모바일 클라이언트 부분
+    app.set('views', process.cwd() + '/app/mobile/views');
     app.set('view engine', 'ejs');
 
-    require(process.cwd() + '/app/routes/index.server.route')(app);
-    require(process.cwd() + '/app/routes/product.server.route')(app);
-    require(process.cwd() + '/app/routes/participation.server.route')(app);
-    require(process.cwd() + '/app/routes/user.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/index.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/participation.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/user.server.route')(app);
 
     app.use(express.static(process.cwd() + '/public'));
     return app;
