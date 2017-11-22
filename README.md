@@ -19,7 +19,7 @@
 
 ## v0.3 (_30%_)
 
-- **웹 서버**
+- **서버**
 
 ```
 /app/controllers/index.server.controller.js
@@ -79,18 +79,17 @@
 
 ## v0.5 (_50%_)
 
-- **웹 서버**
+- **서버**
 
 ```
-/app/controllers/index.server.controller.js
-/app/controllers/product.server.controller.js
-/app/controllers/user.server.controller.js
+/app/mobile/controllers/participation.server.controller.js
+/app/mobile/controllers/schedule.server.controller.js
+/app/mobile/controllers/token.server.controller.js
 
-/app/routes/index.server.route.js
-/app/routes/product.server.route.js
-/app/routes/user.server.route.js
+/app/mobile/routes/participation.server.route.js
 
-/views/index.ejs
+/app/web/../..js
+// 이하 mobile 디렉토리와 동일
 
 /config/express.js
 /config/winston.js
