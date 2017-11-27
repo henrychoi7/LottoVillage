@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:padding="@dimen/margin_10">
 
             <TextView
-                android:id="@+id/participation_history_text_title"
+                android:id="@+id/participation_history_text_participation_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/one_hour_lotto_number" />
@@ -42,6 +43,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/participation_history_linear_layout_participation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/attr_layout_numbers"
@@ -105,40 +107,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100,000,000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="참여 시간 : " />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participating_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2017-09-13 00:00:00" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="투표 시간 : " />
-
-                <TextView
-                    android:id="@+id/participation_history_text_winning_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2017-09-13 00:00:00" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

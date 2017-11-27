@@ -63,7 +63,11 @@ open class BaseApplication : Application() {
                     .build()
 
             retrofit = Retrofit.Builder()
+<<<<<<< HEAD
                     .baseUrl("http://13.124.207.144") //제리 IP 주소
+=======
+                    .baseUrl("http://13.124.207.144/")
+>>>>>>> 8c1a56f2adb14d556d9a49588ad15aa11a41244d
                     .client(client)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())

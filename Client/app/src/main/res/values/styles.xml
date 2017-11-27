@@ -29,6 +29,8 @@
     <style name="DefaultAppBarLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:layout_margin">@dimen/margin_10</item>-->
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="DefaultLottoNumberText">

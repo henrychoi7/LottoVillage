@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
     android:fitsSystemWindows="true"
-    tools:context=".activities.LoginActivity"
-    android:background="@drawable/background">
+    tools:context=".activities.ParticipationHistoryActivity">
 
-    <android.support.design.widget.AppBarLayout style="@style/DefaultAppBarLayout">
+    <android.support.design.widget.AppBarLayout
+        style="@style/DefaultAppBarLayout">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/login_toolbar"
+            android:id="@+id/participation_history_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:theme="@style/ToolbarColoredBackArrow">
@@ -22,7 +22,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/login"
+                    android:text="@string/lotto_participation_history"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -31,5 +31,5 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_login" />
+    <include layout="@layout/content_participation_history" />
 </android.support.design.widget.CoordinatorLayout>

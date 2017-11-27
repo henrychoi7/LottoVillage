@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
     android:fitsSystemWindows="true"
-    tools:context=".activities.InformationActivity">
+    tools:context=".activities.InformationActivity"
+    android:background="@drawable/background">
 
     <android.support.design.widget.AppBarLayout
         style="@style/DefaultAppBarLayout">
