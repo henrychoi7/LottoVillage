@@ -1,7 +1,10 @@
-package com.example.wschd.client.model
+package com.jjosft.android.lottovillage.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Created by JJSOFT-DESKTOP on 2017-08-17.
+ */
 
 object Model {
     data class DefaultResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String)
@@ -11,15 +14,6 @@ object Model {
                                       @SerializedName("WINNING_NUMBER_3") val winningNumber3: Int, @SerializedName("WINNING_NUMBER_4") val winningNumber4: Int,
                                       @SerializedName("WINNING_NUMBER_5") val winningNumber5: Int, @SerializedName("WINNING_NUMBER_6") val winningNumber6: Int,
                                       @SerializedName("PARTICIPATING_TIME") val participatingTime: String)
-
-    data class ParticipationHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfParticipationHistory: ArrayList<DetailsOfParticipationHistory>)
-    data class DetailsOfParticipationHistory(@SerializedName("EVENT_TYPE") val eventType: String, @SerializedName("EVENT_DATE_HOUR") val eventDateHour: String, @SerializedName("WINNING_RATE") val winningRate: String,
-                                             @SerializedName("WINNING_NUMBER_1") val winningNumber1: Int, @SerializedName("WINNING_NUMBER_2") val winningNumber2: Int, @SerializedName("WINNING_NUMBER_3") val winningNumber3: Int,
-                                             @SerializedName("WINNING_NUMBER_4") val winningNumber4: Int, @SerializedName("WINNING_NUMBER_5") val winningNumber5: Int, @SerializedName("WINNING_NUMBER_6") val winningNumber6: Int,
-                                             @SerializedName("PRIZE") val prize: Int, @SerializedName("PARTICIPATING_TIME") val participatingTime: String, @SerializedName("WINNING_TIME") val winningTime: String)
-
-    data class PointHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfPointHistory: ArrayList<DetailsOfPointHistory>)
-    data class DetailsOfPointHistory(@SerializedName("SAVING_TIME") val savingTime: String, @SerializedName("SCORE_TYPE") val scoreType: Int, @SerializedName("SCORE") val score: Int)
 
     data class LottoResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfLotto: ArrayList<DetailsOfLotto>)
     data class DetailsOfLotto(@SerializedName("WINNING_DATE") val winningDate: String, @SerializedName("WINNING_NUMBER_1") val winningNumber1: Int,
@@ -38,4 +32,8 @@ object Model {
                                     @SerializedName("WINNING_NUMBER_5") val winningNumber5: Int, @SerializedName("WINNING_NUMBER_6") val winningNumber6: Int, @SerializedName("BONUS_NUMBER") val bonusNumber: Int)
 
     data class SingleIntResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val results: Int)
+    //추가한 부분 11/27
+    data class ProductResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfProduct: ArrayList<DetailsOfProduct>)
+    data class DetailsOfProduct(@SerializedName("PRODUCT_NAME") val productName: String, @SerializedName("PRODUCT_PRICE") val productPrice: Int,
+                                @SerializedName("PRODUCT_STATUS") val productStatus: String, @SerializedName("PRODUCT_CONTENTS") val productContents: String)
 }

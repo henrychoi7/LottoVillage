@@ -1,6 +1,6 @@
-package com.example.wschd.client.interfaces
+package com.jjosft.android.lottovillage.interfaces
 
-import com.example.wschd.client.model.Model
+import com.jjosft.android.lottovillage.model.Model
 import io.reactivex.Observable
 import okhttp3.RequestBody
 import retrofit2.http.Body
@@ -9,6 +9,9 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 
+/**
+ * Created by JJSOFT-DESKTOP on 2017-08-17.
+ */
 interface RetrofitInterface {
 
     @POST("login")
@@ -19,9 +22,6 @@ interface RetrofitInterface {
 
     @GET("my_point")
     fun getMyPoint(): Observable<Model.SingleIntResponse>
-
-    @GET("details_of_point_history")
-    fun getDetailsOfPointHistory(@Query("saving_time") savingTime : String) : Observable<Model.PointHistoryResponse>
 
     @GET("lotto_rounds")
     fun getLottoRounds(): Observable<Model.SingleIntResponse>
@@ -34,9 +34,6 @@ interface RetrofitInterface {
                                   @Query("event_date") eventDate : String,
                                   @Query("event_number") eventNumber : String,
                                   @Query("confirm_status") isConfirmStatus : Boolean): Observable<Model.ParticipationResponse>
-
-    @GET("details_of_one_day_participation")
-    fun getDetailsOfOneDayParticipation(@Query("event_date") eventDate : String): Observable<Model.ParticipationHistoryResponse>
 
     @GET("details_of_all_participation")
     fun getDetailsOfAllParticipation(): Observable<Model.ParticipationResponse>
@@ -51,4 +48,7 @@ interface RetrofitInterface {
 
     @POST("participation")
     fun postParticipation(@Body params: RequestBody): Observable<Model.DefaultResponse>
+
+    @GET("details_of_all_product_info")
+    fun getDetailsOfAllProductInfo(@Query(""))
 }
