@@ -1,15 +1,14 @@
-package com.example.wschd.client.base
+package com.jjosft.android.lottovillage.base
 
 import android.app.Activity
 import android.app.Application
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.support.v7.app.AppCompatDialog
 import android.widget.TextView
-import com.example.wschd.client.R
-import com.example.wschd.client.interfaces.RetrofitInterface
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.jjosft.android.lottovillage.R
+import com.jjosft.android.lottovillage.interfaces.RetrofitInterface
 import kotlinx.android.synthetic.main.progress_loading.*
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
@@ -20,6 +19,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 import java.util.concurrent.TimeUnit
 
 
+/**
+ * Created by JJSOFT-DESKTOP on 2017-08-13.
+ */
 open class BaseApplication : Application() {
     companion object {
         private lateinit var baseApplication: BaseApplication
@@ -61,7 +63,7 @@ open class BaseApplication : Application() {
                     .build()
 
             retrofit = Retrofit.Builder()
-                    .baseUrl("http://13.124.207.144:3000/")
+                    .baseUrl("http://13.124.207.144/")
                     .client(client)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
@@ -78,7 +80,7 @@ open class BaseApplication : Application() {
         if (progressDialog == null) {
             progressDialog = AppCompatDialog(activity)
             progressDialog!!.setCancelable(false)
-            progressDialog!!.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            progressDialog!!.window.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
             progressDialog!!.setContentView(R.layout.progress_loading)
             progressDialog!!.text_progress.text = message
             progressDialog!!.show()

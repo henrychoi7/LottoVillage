@@ -1,4 +1,4 @@
-package com.example.wschd.client.activities
+package com.jjosft.android.lottovillage.activities
 
 import android.Manifest
 import android.app.PendingIntent
@@ -10,10 +10,10 @@ import android.telephony.SmsManager
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.wschd.client.R
-import com.example.wschd.client.base.BaseActivity
-import com.example.wschd.client.base.BaseApplication
-import com.example.wschd.client.model.Model
+import com.jjosft.android.lottovillage.R
+import com.jjosft.android.lottovillage.base.BaseActivity
+import com.jjosft.android.lottovillage.base.BaseApplication
+import com.jjosft.android.lottovillage.model.Model
 import com.yarolegovich.lovelydialog.LovelyStandardDialog
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -84,7 +84,6 @@ class RegisterActivity : BaseActivity() {
             R.id.register_button_register -> {
                 validateRegister()
             }
-            R.id.register_text_terms_conditions -> Toast.makeText(applicationContext, "아직 개발중", Toast.LENGTH_SHORT).show()
         }
     }
 

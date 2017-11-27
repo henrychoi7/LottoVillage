@@ -5,7 +5,8 @@
     style="@style/DefaultParentLayout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.InformationActivity"
-    tools:showIn="@layout/activity_information">
+    tools:showIn="@layout/activity_information"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,25 +19,25 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <com.example.wschd.client.base.ClearEditText
+            <com.jjosft.android.lottovillage.base.ClearEditText
                 android:id="@+id/information_edit_name"
                 style="@style/DefaultEditText"
                 android:hint="@string/name"
                 android:inputType="text" />
 
-            <com.example.wschd.client.base.PasswordEditText
+            <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/information_edit_password"
                 style="@style/DefaultEditText"
                 android:hint="@string/password"
                 android:inputType="textPassword" />
 
-            <com.example.wschd.client.base.PasswordEditText
+            <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/information_edit_password_confirm"
                 style="@style/DefaultEditText"
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword" />
 
-            <com.example.wschd.client.base.PasswordEditText
+            <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/information_edit_new_password"
                 style="@style/DefaultEditText"
                 android:hint="@string/new_password"

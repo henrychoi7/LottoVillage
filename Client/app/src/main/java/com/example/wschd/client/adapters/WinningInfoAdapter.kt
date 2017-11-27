@@ -1,15 +1,25 @@
-package com.example.wschd.client.adapters
+package com.jjosft.android.lottovillage.adapters
 
+import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.example.wschd.client.R
-import com.example.wschd.client.base.BaseApplication
-import com.example.wschd.client.model.Model
+import android.widget.*
+import com.jjosft.android.lottovillage.R
+import com.jjosft.android.lottovillage.activities.MainActivity
+import com.jjosft.android.lottovillage.base.BaseApplication
+import com.jjosft.android.lottovillage.model.Model
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_home.*
 
-
+/**
+ * Created by JJSOFT-DESKTOP on 2017-09-04.
+ */
 class WinningInfoAdapter(private val mWinningInfoArrayList: ArrayList<Model.DetailsOfWinningInfo>) : RecyclerView.Adapter<WinningInfoAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val homeTextViewWinningEventType: TextView = view.findViewById(R.id.home_text_winning_event_type)
