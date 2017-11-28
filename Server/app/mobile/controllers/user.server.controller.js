@@ -1,7 +1,7 @@
 var logger = require(process.cwd() + '/config/winston'),
     pool = require(process.cwd() + '/config/maria.pool'),
     jwt = require('jsonwebtoken'),
-    tokenCheck = require(process.cwd() + '/app/controllers/token.server.controller');
+    tokenCheck = require(process.cwd() + '/app/mobile/controllers/token.server.controller');
 
 exports.retrievePoint = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
