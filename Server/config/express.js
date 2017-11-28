@@ -9,7 +9,7 @@
 * cookie-parser = req.cookies 객체를 채우기 위한 쿠키 해석용 미들웨어
 * express-session = 영속적인 세션을 지원하기 위해 사용하는 미들웨어
 */
-var express = require('config/express'),
+var express = require('express'),
     //morgan = require('morgan'),
     compression = require('compression'),
     bodyParser = require('body-parser'),
@@ -46,10 +46,11 @@ module.exports = function () {
         secret: 'developmentSessionSecret'
     }));*/
 
-    // 모바일 클라이언트 부분
-    app.set('views', process.cwd() + '/app/mobile/views');
+    app.set('views', process.cwd() + '/app/web/views');
     app.set('view engine', 'ejs');
 
+    // 모바일 클라이언트 부분
+    require(process.cwd() + '/app/mobile/routes/algorithm.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/index.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/participation.server.route')(app);

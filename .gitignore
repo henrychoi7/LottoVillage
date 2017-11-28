@@ -1,5 +1,7 @@
 # .idea/
 .idea/
 Server/.idea/
+Server/node_modules/
+Server/logs/
 Client/.idea/
 Client_web/.idea/

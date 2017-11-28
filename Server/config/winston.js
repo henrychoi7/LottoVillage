@@ -1,4 +1,4 @@
-var winston = require('config/winston');
+var winston = require('winston');
 require('winston-daily-rotate-file');
 
 module.exports = function () {
