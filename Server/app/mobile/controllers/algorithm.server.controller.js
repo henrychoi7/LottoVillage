@@ -1,10 +1,12 @@
+/*
 var logger = require(process.cwd() + '/config/winston'),
     tokenCheck = require(process.cwd() + '/app/mobile/controllers/token.server.controller'),
     randomIntArray = require('random-int-array');
 
 var pythonScriptPath = '/config/algorithm/lotto.py',
     pythonShell = require('python-shell');
-
+*/
+/*
 exports.details_of_algorithm_info = function (req, res) {
     var requestAlgorithmType = req.query.algorithm_type,
         isValidatedToken = tokenCheck.check(req),
@@ -88,14 +90,14 @@ exports.details_of_algorithm_info = function (req, res) {
                     });
                 }
                 logger().info('로또 추천 번호 조회 - 알고리즘 : ' + requestAlgorithmType);
-                /*
+                /!*
                 console.log('1 번째 추천 번호 : ' + requestPredictionNumber1 + '\n2 번째 추천 번호 : ' + requestPredictionNumber2 + '\n3 번째 추천 번호 : ' + requestPredictionNumber3 +
                     '\n4 번째 추천 번호 : ' + requestPredictionNumber4 + '\n5 번째 추천 번호 : ' + requestPredictionNumber5 + '\n6 번째 추천 번호 : ' + requestPredictionNumber6 +
                     '\n보너스 번호 : ' + requestBonusNumber);
-                */
+                *!/
                 res.json({isSuccess: true, errorMessage: ""});
 
                 return res.json({isSuccess: true, errorMessage: "", results: results});
             });
     });
-};
+};*/
