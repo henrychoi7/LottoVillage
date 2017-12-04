@@ -1,129 +1,18 @@
-var logger = require(process.cwd() + '/config/winston'),
-    pool = require(process.cwd() + '/config/maria.pool'),
-    jwt = require('jsonwebtoken'),
-    tokenCheck = require(process.cwd() + '/app/web/controllers/token.server.controller');
+var pool = require(process.cwd() + '/config/maria.pool');
 
-exports.retrievePoint = function (req, res) {
-    var isValidatedToken = tokenCheck.check(req),
-        requestPhoneNumber;
+exports.loginWeb = function (req, res) {
+    var requestPhoneNumber,
+        requestPassword;
 
-    if (isValidatedToken) {
-        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
-        requestPhoneNumber = tokenData.phone_number;
-    } else {
-        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
-    }
+    requestPhoneNumber = req.body.phone_number;
+    requestPassword = req.body.password;
 
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
+    if (!requestPassword) return res.json({isSuccess: false});
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: 'SELECT PERSONAL_SCORE \
-                FROM USER_INFO \
-                WHERE PHONE_NUMBER = ?\
-                LIMIT 1',
-                timeout: 10000
-            },
-            [requestPhoneNumber],
-            function (error, results, columns) {
-                connection.release();
-
-                if (error) {
-                    logger().info('나의 포인트 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
-                    return res.json({
-                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage, results: 0});
-                }
-
-                if (!results.length) {
-                    return res.json({
-                        isSuccess: false, errorMessage: "내 정보가 존재하지 않습니다.", results: 0});
-                }
-
-                return res.json({isSuccess: true, errorMessage: "", results: results[0].PERSONAL_SCORE});
-            });
-    });
-};
-
-exports.detailsOfPointHistory = function (req, res) {
-    var isValidatedToken = tokenCheck.check(req),
-        requestPhoneNumber;
-
-    if (isValidatedToken) {
-        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
-        requestPhoneNumber = tokenData.phone_number;
-    } else {
-        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
-    }
-
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
-
-    pool.getConnection(function (err, connection) {
-        connection.query({
-                sql: 'SELECT SAVING_TIME, CASE SCORE_TYPE WHEN 0 THEN FALSE ELSE TRUE END SCORE_TYPE, SCORE \
-                FROM SCORE_DETAIL \
-                WHERE DATE_FORMAT(SAVING_TIME, \'%X%m\') = ? \
-                AND PHONE_NUMBER = ?',
-                timeout: 10000
-            },
-            [req.query.saving_time, requestPhoneNumber],
-            function (error, results, columns) {
-                connection.release();
-
-                if (error) {
-                    logger().info('포인트 내역 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
-                    return res.json({
-                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage, results: [{
-                            SAVING_TIME:'0000-00-00 00:00:00', SCORE_TYPE:0, SCORE:0
-                        }]
-                    });
-                }
-
-                if (!results.length) {
-                    return res.json({
-                        isSuccess: false, errorMessage: "포인트 내역 정보가 존재하지 않습니다.", results: [{
-                            SAVING_TIME:'0000-00-00 00:00:00', SCORE_TYPE:0, SCORE:0
-                        }]
-                    });
-                }
-
-                return res.json({isSuccess: true, errorMessage: "", results: results});
-            });
-    });
-};
-
-exports.login = function (req, res) {
-    var isValidatedToken = tokenCheck.check(req),
-        requestPhoneNumber,
-        requestPassword,
-        tokenValue;
-
-    if (isValidatedToken) {
-        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
-        requestPhoneNumber = tokenData.phone_number;
-        requestPassword = tokenData.password;
-        tokenValue = req.headers["x-access-token"];
-    } else {
-        requestPhoneNumber = req.body.phone_number;
-        requestPassword = req.body.password;
-    }
-
-    if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
-    if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
-
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
-    requestPassword = requestPassword.replace(/(\s*)/g, "");
-
-    var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-    if (!regExp.test(requestPhoneNumber)) return res.json({isSuccess: false, errorMessage: "전화번호를 확인해주세요."});
-
-    if (requestPassword.length < 6 || requestPassword.length > 10) return res.json({
-        isSuccess: false,
-        errorMessage: "비밀번호는 6~10자리를 입력해주세요."
-    });
-
-    pool.getConnection(function (err, connection) {
-        connection.query({
-                sql: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD \
+                sql: 'SELECT COUNT(1) AS CNT \
                   FROM USER_INFO \
                   WHERE PHONE_NUMBER = ? \
                   AND PASSWORD = ?',
@@ -131,108 +20,184 @@ exports.login = function (req, res) {
             },
             [requestPhoneNumber, requestPassword],
             function (error, results, columns) {
+                connection.release();
                 if (error) {
-                    connection.release();
-                    logger().info('로그인 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
-                    return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                    return res.json({isSuccess: false});
                 }
 
-                if (!results.length) {
-                    connection.release();
-                    return res.json({isSuccess: false, errorMessage: "전화번호 혹은 비밀번호가 일치하지 않습니다."});
+                if (results[0].CNT === 0) {
+                    return res.json({isSuccess: false});
                 }
 
-                if (!isValidatedToken) tokenValue = jwt.sign(
-                    {
-                        _id: results[0].PK_ID,
-                        phone_number: results[0].PHONE_NUMBER,
-                        password: results[0].PASSWORD
-                    },
-                    'developmentTokenSecret',
-                    {
-                        expiresIn: '3d',
-                        subject: 'userInfo'
-                    }
-                );
-
-                connection.query({
-                        sql: 'UPDATE USER_INFO \
-                        SET CURRENT_DATETIME = CURRENT_TIMESTAMP \
-                        WHERE PHONE_NUMBER = ? \
-                        AND PASSWORD = ?',
-                        timeout: 10000
-                    },
-                    [requestPhoneNumber, requestPassword],
-                    function (error, results, columns) {
-                        connection.release();
-
-                        if (error) {
-                            logger().info('로그인 - 에러코드 : ' + error.code + ', 에러내용:' + error.sqlMessage);
-                            return res.json({isSuccess: false, errorMessage: "로그인 시도 오류 : " + error.sqlMessage});
-                        }
-
-                        logger().info('로그인 - 토큰 : ' + tokenValue);
-                        res.header('x-access-token', tokenValue);
-                        res.json({isSuccess: true, errorMessage: ""});
-                    });
+                return res.json({isSuccess: true});
             });
     });
 };
 
-exports.register = function (req, res) {
-    var requestName = req.body.name,
-        requestPassword = req.body.password,
-        requestPasswordConfirm = req.body.password_confirm,
-        requestPhoneNumber = req.body.phone_number;
+exports.retrieveUserList = function (req, res) {
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: "SELECT A.PHONE_NUMBER, \
+                    A.NAME AS USER_NAME, \
+                    A.USER_STATUS, \
+                    A.PERSONAL_SCORE AS USER_TOT_POINT, \
+                    (SELECT COUNT(1) AS TOT_CNT \
+                        FROM PARTICIPATION AS B \
+                        WHERE A.PHONE_NUMBER = B.PHONE_NUMBER \
+                        AND B.EVENT_TYPE =  '1 ') AS ONE_TOT_CNT, \
+                    (SELECT COUNT(1) AS TOT_CNT \
+                        FROM PARTICIPATION AS B \
+                        WHERE A.PHONE_NUMBER = B.PHONE_NUMBER \
+                        AND B.EVENT_TYPE =  '2 ') AS SIX_TOT_CNT, \
+                    (SELECT COUNT(1) AS TOT_CNT \
+                        FROM PARTICIPATION AS B \
+                        WHERE A.PHONE_NUMBER = B.PHONE_NUMBER \
+                        AND B.EVENT_TYPE =  '3 ') AS TWELVE_TOT_CNT, \
+                    A.CURRENT_DATETIME, \
+                    A.REGISTER_DATETIME \
+                    FROM USER_INFO AS A \
+                    WHERE PK_ID <> '1' \
+                    ORDER BY NAME",
+                timeout: 10000
+            },
+            [],
+            function (error, results, columns) {
+                connection.release();
+                if (error) {
+                    return res.json({isSuccess: false, results:null});
+                }
 
-    if (!requestName) return res.json({isSuccess: false, errorMessage: "이름을 입력해주세요."});
-    if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
-    if (!requestPasswordConfirm) return res.json({isSuccess: false, errorMessage: "비밀번호확인값을 입력해주세요."});
-    if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
-
-    requestName = requestName.replace(/(\s*)/g, "");
-    requestPassword = requestPassword.replace(/(\s*)/g, "");
-    requestPasswordConfirm = requestPasswordConfirm.replace(/(\s*)/g, "");
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
-
-    if (requestName.length < 3 || requestName.length > 10) return res.json({
-        isSuccess: false,
-        errorMessage: "이름은 3~10자리를 입력해주세요."
+                return res.json({isSuccess: true, results:results});
+            });
     });
-    if (requestPassword.length < 6 || requestPassword.length > 10) return res.json({
-        isSuccess: false,
-        errorMessage: "비밀번호는 6~10자리를 입력해주세요."
-    });
-    if (requestPasswordConfirm.length < 6 || requestPasswordConfirm.length > 10) return res.json({
-        isSuccess: false,
-        errorMessage: "비밀번호확인값은 6~10자리를 입력해주세요."
-    });
+};
 
-    if (requestPassword !== requestPasswordConfirm) return res.json({
-        isSuccess: false,
-        errorMessage: "비밀번호가 일치하지 않습니다."
-    });
+exports.updateUserStatus = function (req, res) {
+    var requestPhoneNumber;
 
-    var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-    if (!regExp.test(requestPhoneNumber)) return res.json({isSuccess: false, errorMessage: "전화번호를 확인해주세요."});
+    requestPhoneNumber = req.body.phone_number;
+
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: 'INSERT INTO USER_INFO(PHONE_NUMBER, PASSWORD, NAME) \
-                  VALUES(?, ?, ?)',
+                sql: "UPDATE USER_INFO \
+                  SET USER_STATUS = '1' \
+                  WHERE PHONE_NUMBER = ?",
                 timeout: 10000
             },
-            [requestPhoneNumber, requestPassword, requestName],
+            [requestPhoneNumber],
             function (error, results, columns) {
                 connection.release();
-
                 if (error) {
-                    logger().info('회원가입 - 에러코드 : ' + error.code + ', 에러내용:' + error.sqlMessage);
-                    return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                    return res.json({isSuccess: false});
                 }
 
-                logger().info('회원가입 - 전화번호 : ' + requestPhoneNumber);
-                res.json({isSuccess: true, errorMessage: ""});
+                return res.json({isSuccess: true});
+            });
+    });
+};
+
+exports.retrieveUserPointHistory = function (req, res) {
+    var requestPhoneNumber = req.query.phone_number,
+        requestEventDate = req.query.event_date;
+
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
+    if (!requestEventDate) return res.json({isSuccess: false});
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: "SELECT SUBSTRING(SAVING_TIME, 6, 14) AS DATE_TIME, \
+                    CASE SCORE_TYPE WHEN 0 THEN '+' \
+                        ELSE '-' END AS CONTENTS, \
+                    CONCAT(SCORE, ' P') AS POINT \
+                    FROM SCORE_DETAIL \
+                    WHERE PHONE_NUMBER = ? \
+                    AND DATE_FORMAT(SAVING_TIME, '%y%m') = ?",
+                timeout: 10000
+            },
+            [requestPhoneNumber, requestEventDate],
+            function (error, results, columns) {
+                connection.release();
+                if (error) {
+                    return res.json({isSuccess: false, results:null});
+                }
+
+                return res.json({isSuccess: true, results:results});
+            });
+    });
+};
+
+exports.retrieveUserAllProduct = function (req, res) {
+    var requestPhoneNumber = req.query.phone_number,
+        requestEventDate = req.query.event_date;
+
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
+    if (!requestEventDate) return res.json({isSuccess: false});
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: "SELECT SUBSTRING(SAVING_TIME, 6, 14) AS DATE_TIME, \
+                        B.PRODUCT_NAME AS CONTENTS, \
+                        CONCAT(B.PRODUCT_PRICE, ' P') AS POINT \
+                    FROM USER_PRODUCT_LIST AS A \
+                    INNER JOIN PRODUCT_MASTER AS B \
+                        ON A.PRODUCT_CODE = B.PRODUCT_CODE \
+                    WHERE PHONE_NUMBER = ? \
+                    AND DATE_FORMAT(SAVING_TIME, '%y%m') = ?",
+                timeout: 10000
+            },
+            [requestPhoneNumber, requestEventDate],
+            function (error, results, columns) {
+                connection.release();
+                if (error) {
+                    return res.json({isSuccess: false, results:null});
+                }
+
+                return res.json({isSuccess: true, results:results});
+            });
+    });
+};
+
+exports.retrieveUserAllParticipation = function (req, res) {
+    var requestPhoneNumber = req.query.phone_number,
+        requestEventDate = req.query.event_date;
+
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
+    if (!requestEventDate) return res.json({isSuccess: false});
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: "SELECT SUBSTRING(PARTICIPATING_TIME, 6, 14) AS DATE_TIME, \
+                CONCAT( \
+                    CASE EVENT_TYPE WHEN 1 THEN '1시간 - ' \
+                                    WHEN 2 THEN '6시간 - ' \
+                                    WHEN 3 THEN '12시간 - ' \
+                                    ELSE 0 END, \
+                    CASE WINNING_RATE WHEN 9 THEN '꽝' \
+                                      ELSE CONCAT(WINNING_RATE, '등') END \
+                    ) AS CONTENTS, \
+                CONCAT( \
+                    CASE WINNING_RATE WHEN 1 THEN 500 \
+                                      WHEN 2 THEN 400 \
+                                      WHEN 3 THEN 300 \
+                                      WHEN 4 THEN 200 \
+                                      WHEN 5 THEN 100 \
+                                      ELSE 0 \
+                                    END, ' P') AS POINT \
+                FROM PARTICIPATION \
+                WHERE PHONE_NUMBER = ? \
+                AND DATE_FORMAT(PARTICIPATING_TIME, '%y%m') = ?",
+                timeout: 10000
+            },
+            [requestPhoneNumber, requestEventDate],
+            function (error, results, columns) {
+                connection.release();
+                if (error) {
+                    return res.json({isSuccess: false, results:null});
+                }
+
+                return res.json({isSuccess: true, results:results});
             });
     });
 };
