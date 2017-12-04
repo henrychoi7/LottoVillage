@@ -34,6 +34,6 @@ schedule.scheduleJob('0 21 * * 6', function () {
 });
 
 var app = express();
-app.listen(3000);
+app.listen(65004);
 module.exports = app;
 logger().info('로또빌리지 서버 시작');

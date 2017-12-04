@@ -50,12 +50,11 @@ module.exports = function () {
     app.set('view engine', 'ejs');
 
     // 모바일 클라이언트 부분
-    //require(process.cwd() + '/app/mobile/routes/algorithm.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/algorithm.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/index.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/participation.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/user.server.route')(app);
 
-    app.use(express.static(process.cwd() + '/public'));
     return app;
 };

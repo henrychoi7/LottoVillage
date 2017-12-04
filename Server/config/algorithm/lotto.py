@@ -4,11 +4,12 @@
 
 from random import shuffle
 import csv
-import sys
+import sys, os
 
 lst = []
 
-with open('lotto.csv') as csvfile:
+# Node.js에서 실행할 때 index.js 기준 경로지만, Python 단독 실행 시 현재 디렉토리 기준 경로로 설정해야 함
+with open(os.getcwd() + '/config/algorithm/lotto.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter = ',')
     for row in readCSV:
         for i in range(7):
