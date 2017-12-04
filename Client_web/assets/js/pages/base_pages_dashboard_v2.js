@@ -13,7 +13,7 @@ var BasePagesDashboardv2 = function() {
 
         // Earnings Chart Data
         var $dashChartEarningsData = {
-            labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+            labels: ['12/03', '12/04', '12/15', '12/16', '12/17', '12/17', '12/18'],
             datasets: [
                 {
                     label: 'Last Week',
