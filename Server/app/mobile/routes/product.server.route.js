@@ -3,7 +3,7 @@ module.exports = function(app){
     app.get('/', product.render);
     app.get('/reward/list', product.reward_list_info);
     app.route('/reward/list')
-        .post(reward.reward_exchange_info);
+        .post(product.reward_exchange_info);
     app.get('/product_list', product.retrieveProductList);
     app.route('/register_product')
         .post(product.insertProduct);
