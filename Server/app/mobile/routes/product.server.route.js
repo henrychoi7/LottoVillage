@@ -1,7 +1,14 @@
 module.exports = function(app){
-    var reward = require(process.cwd() + '/app/mobile/controllers/product.server.controller');
-    app.get('/', reward.render);
-    app.get('/reward/list', reward.reward_list_info);
+    var product = require(process.cwd() + '/app/mobile/controllers/product.server.controller');
+    app.get('/', product.render);
+    app.get('/reward/list', product.reward_list_info);
     app.route('/reward/list')
         .post(reward.reward_exchange_info);
+    app.get('/product_list', product.retrieveProductList);
+    app.route('/register_product')
+        .post(product.insertProduct);
+    app.route('/delete_product')
+        .post(product.deleteProduct);
+    app.route('/update_product')
+        .post(product.updateProduct);
 };
