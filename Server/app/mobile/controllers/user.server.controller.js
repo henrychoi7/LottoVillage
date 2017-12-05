@@ -92,22 +92,17 @@ exports.detailsOfPointHistory = function (req, res) {
 };
 
 exports.deleteUser = function (req, res) {
-    var isValidatedToken = tokenCheck.check(req),
-        requestPhoneNumber;
+    var requestPhoneNumber;
 
-    if (isValidatedToken) {
-        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
-        requestPhoneNumber = tokenData.phone_number;
-    } else {
-        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
-    }
+    requestPhoneNumber = req.body.phone_number;
 
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+    if (!requestPhoneNumber) return res.json({isSuccess: false});
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: "DELETE FROM USER_INFO \
-                    WHERE PHONE_NUMBER = ?",
+                sql: 'UPDATE USER_INFO \
+                    SET USER_STATUS = 2 \
+                    WHERE PHONE_NUMBER = ?',
                 timeout: 10000
             },
             [requestPhoneNumber],

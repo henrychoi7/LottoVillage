@@ -18,10 +18,11 @@ exports.prediction_algorithm = function (req, res) {
         requestBonusNumber: 0
     };
 
+    // 시스템에 따라 경로 설정하기
     var options = {
         mode: 'text',
-        pythonPath: '/Users/henryman/miniconda2/bin/python',
-        scriptPath: '/Users/henryman/LottoVillage/Server/config/algorithm/'
+        pythonPath: '/usr/bin/python',
+        scriptPath: '/home/Tues_4team/svr/src0.9/LottoVillage/Server/config/algorithm/'
     };
 
     switch (requestAlgorithmType) {
