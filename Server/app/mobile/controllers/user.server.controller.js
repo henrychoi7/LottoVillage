@@ -91,6 +91,37 @@ exports.detailsOfPointHistory = function (req, res) {
     });
 };
 
+exports.deleteUser = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: "DELETE FROM USER_INFO \
+                    WHERE PHONE_NUMBER = ?",
+                timeout: 10000
+            },
+            [requestPhoneNumber],
+            function (error, results, columns) {
+                connection.release();
+                if (error) {
+                    return res.json({isSuccess: false, errorMessage: ""});
+                }
+
+                return res.json({isSuccess: true, errorMessage: ""});
+            });
+    });
+};
+
 exports.login = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
         requestPhoneNumber,
