@@ -189,7 +189,7 @@
             <div class="row items-push">
                 <div class="col-sm-7">
                     <h1 class="page-heading">
-                        회원관리 <small>회원 조회, 회원별 포인트/참가/상품 내역 조회, 회원 영구정지 등</small>
+                        내역 보기 <small>포인트 이용내역, 상품 구매내역, 복권 참가내역 등</small>
                     </h1>
                 </div>
                 <div class="col-sm-5 text-right hidden-xs">
@@ -205,59 +205,162 @@
         <!-- Page Content -->
         <div class="content">
             <!-- Dynamic Table Full Pagination -->
-            <div class="block">
+
+            <!-- END Dynamic Table Full Pagination -->
+
+            <!-- Dynamic Table Simple -->
+            <div id="detail-point" class="block">
+                <div class="block-header">
+                    <h3 class="block-title">포인트 이용내역 <small> 조회하고자 하는 날짜를 선택해주세요.</small></h3>
+                </div>
                 <div class="block-content">
-                    <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality initialized in js/pages/base_tables_datatables.js -->
-                    <table class="table table-bordered table-striped js-dataTable-full-pagination">
+                    <form class="form-horizontal">
+                        <div class="col-md-2">
+                            <select id="detail-point-year" name="detail-point-year" class="form-control">
+                                <option value="">년</option>
+                                <option value="17" selected>2017년</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="detail-point-month" class="form-control">
+                                <option value="">월</option>
+                                <option value="01">01월</option>
+                                <option value="02">02월</option>
+                                <option value="03">03월</option>
+                                <option value="04">04월</option>
+                                <option value="05">05월</option>
+                                <option value="05">05월</option>
+                                <option value="06">06월</option>
+                                <option value="07">07월</option>
+                                <option value="08">08월</option>
+                                <option value="09">09월</option>
+                                <option value="10">10월</option>
+                                <option value="11">11월</option>
+                                <option value="12" selected>12월</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+                    <table class="table table-bordered table-striped js-dataTable-simple">
                         <thead>
                         <tr>
-                            <!--<th class="text-center"></th>-->
-                            <th class="text-center">이름</th>
-                            <th class="text-center">핸드폰 번호</th>
-                            <th class="hidden-xs text-center">포인트</th>
-                            <th class="hidden-xs text-center">회원 가입일</th>
-                            <th class="hidden-xs text-center">최종 접속일</th>
-                            <th class="hidden-xs text-center">상태</th>
-                            <th class="text-center">내역 보기</th>
+                            <th class="text-center">날짜시간</th>
+                            <th class="text-center">적립/사용</th>
+                            <th class="text-center">포인트</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="font-w600 text-center">김길동</td>
-                            <td class="text-center user-phone">010-1234-5678</td>
-                            <td class="hidden-xs text-right">12345 p</td>
-                            <td class="hidden-xs text-center">2017-12-03 20:41:45</td>
-                            <td class="hidden-xs text-center">2017-12-03 20:41:45</td>
-                            <td class="hidden-xs text-left">
-                                <span class="label label-danger">정지</span>
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <button class="details-btn btn btn-xs btn-default" type="button" data-toggle="tooltip" title="내역 보기">자세히 보기 <i class="fa fa-angle-right"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="font-w600 text-center">김길동</td>
-                            <td class="text-center user-phone">010-1234-5678</td>
-                            <td class="hidden-xs text-right">12345 p</td>
-                            <td class="hidden-xs text-center">2017-12-03 20:41:45</td>
-                            <td class="hidden-xs text-center">2017-12-03 20:41:45</td>
-                            <td class="hidden-xs text-left">
-                                <span class="label label-success">일반</span>
-                                <button class="ban-btn btn btn-xs btn-default" type="button" data-toggle="tooltip" title="영구 정지"><i class="fa fa-close"></i></button>
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <button class="details-btn btn btn-xs btn-default" type="button" data-toggle="tooltip" title="내역 보기">자세히 보기 <i class="fa fa-angle-right"></i></button>
-                                </div>
-                            </td>
+                            <td class="text-center">09-03 12:00:00</td>
+                            <td class="text-center">+</td>
+                            <td class="text-center font-w600">100 P</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <!-- END Dynamic Table Full Pagination -->
+            <div id="detail-product" class="block">
+                <div class="block-header">
+                    <h3 class="block-title">상품 구매내역 <small> 조회하고자 하는 날짜를 선택해주세요.</small></h3>
+                </div>
+                <div class="block-content">
+                    <form class="form-horizontal">
+                        <div class="col-md-2">
+                            <select id="detail-product-year" class="form-control">
+                                <option value="">년</option>
+                                <option value="17" selected>2017년</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="detail-product-month" class="form-control">
+                                <option value="">월</option>
+                                <option value="01">01월</option>
+                                <option value="02">02월</option>
+                                <option value="03">03월</option>
+                                <option value="04">04월</option>
+                                <option value="05">05월</option>
+                                <option value="05">05월</option>
+                                <option value="06">06월</option>
+                                <option value="07">07월</option>
+                                <option value="08">08월</option>
+                                <option value="09">09월</option>
+                                <option value="10">10월</option>
+                                <option value="11">11월</option>
+                                <option value="12" selected>12월</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+                    <table class="table table-bordered table-striped js-dataTable-simple">
+                        <thead>
+                        <tr>
+                            <th class="text-center">날짜시간</th>
+                            <th class="text-center">상품명</th>
+                            <th class="text-center">사용 포인트</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center">09-03 12:00:00</td>
+                            <td class="text-center">빙그레 우유</td>
+                            <td class="text-center font-w600">100 P</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="detail-lottery" class="block">
+                <div class="block-header">
+                    <h3 class="block-title">복권 참가내역 <small> 조회하고자 하는 날짜를 선택해주세요.</small></h3>
+                </div>
+                <div class="block-content">
+                    <form class="form-horizontal">
+                        <div class="col-md-2">
+                            <select id="detail-lottery-year" class="form-control">
+                                <option value="">년</option>
+                                <option value="17" selected>2017년</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="detail-lottery-month" class="form-control">
+                                <option value="">월</option>
+                                <option value="01">01월</option>
+                                <option value="02">02월</option>
+                                <option value="03">03월</option>
+                                <option value="04">04월</option>
+                                <option value="05">05월</option>
+                                <option value="05">05월</option>
+                                <option value="06">06월</option>
+                                <option value="07">07월</option>
+                                <option value="08">08월</option>
+                                <option value="09">09월</option>
+                                <option value="10">10월</option>
+                                <option value="11">11월</option>
+                                <option value="12" selected>12월</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+                    <table class="table table-bordered table-striped js-dataTable-simple">
+                        <thead>
+                        <tr>
+                            <th class="text-center">날짜시간</th>
+                            <th class="text-center">적립/사용</th>
+                            <th class="text-center">포인트</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center">09-03 12:00:00</td>
+                            <td class="text-center">1시간 - 꽝</td>
+                            <td class="text-center font-w600">3 P</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- END Dynamic Table Simple -->
         </div>
         <!-- END Page Content -->
     </main>
@@ -283,6 +386,7 @@
 <script src="assets/js/pages/base_tables_datatables.js"></script>
 
 <!-- LottoVillage JS Code -->
-<script src="assets/js/lottoVillage_userAdmin.js"></script>
+<script src="assets/js/lottoVillage_userDetails.js"></script>
+
 </body>
 </html>

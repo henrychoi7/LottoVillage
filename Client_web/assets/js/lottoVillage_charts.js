@@ -4,7 +4,54 @@
  *  Description: Custom JS code used in Charts Page
  */
 
+// var url = "http://13.124.207.144/";
+var url = "http://203.249.127.32:65004/";
+
+// var myJson = {"isSuccess":true,"results":{"week_lv_date":["12/05","12/04","12/03","12/02","12/01","11/30","11/29"],"week_lv_one_cnt":[3,1,2,3,1,1,1],"week_lv_six_cnt":[1,2,3,1,1,1,1],"week_lv_twelve_cnt":[1,1,1,1,1,1,1]}};
+// console.log(myJson.results.week_lv_date);
+var weekDate = [];
+var week1 = [];
+var week6 = [];
+var week12 = [];
+
 var BaseCompCharts = function() {
+
+    var getAnaylzeUser = function() {
+        $.ajax({
+            type: "GET",
+            url: url + 'anaylze_user',
+            dataType: "json",
+            success: function(resData) {
+                if (resData.isSuccess == true){
+                    $('#USER_TOT_TODAY').data('to', resData.results.USER_TOT_TODAY);
+                    $('#USER_TOT').data('to', resData.results.USER_TOT);
+                    $('#USER_RATE_LOGIN').data('to', resData.results.USER_RATE_LOGIN);
+                }
+            },
+            error: function(request,status,error){
+                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            }
+        });
+    };
+
+    var getWeekChart = function() {
+        $.ajax({
+            type: "GET",
+            url: url + 'week_lv',
+            dataType: "json",
+            success: function(resData) {
+                if (resData.isSuccess == true){
+                    weekDate = resData.results.week_lv_date;
+                    week1 = resData.results.week_lv_one_cnt;
+                    week6 = resData.results.week_lv_six_cnt;
+                    week12 = resData.results.week_lv_twelve_cnt;
+                }
+            },
+            error: function(request,status,error){
+                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            }
+        });
+    };
 
     // jQuery Sparkline Charts, for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-docs
     var initChartsSparkline = function(){
@@ -57,6 +104,7 @@ var BaseCompCharts = function() {
         init: function () {
             // Init all charts
             initChartsSparkline();
+
         }
     };
 }();
