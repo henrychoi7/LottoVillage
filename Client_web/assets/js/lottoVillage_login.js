@@ -21,7 +21,6 @@ var login = {
         var $form = $('form[name=admin-login]');
         var $name = $form.find('input[name=login-username]');
         var $password = $form.find('input[name=login-password]');
-        console.log('asdfdsdf');
 
         $.ajax({
             type: "POST",
