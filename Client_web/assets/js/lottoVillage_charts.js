@@ -5,7 +5,7 @@
  */
 
 // var url = "http://13.124.207.144/";
-var url = "http://203.249.127.32:65004/";
+var url = "http://192.9.44.53:65004/";
 
 // var myJson = {"isSuccess":true,"results":{"week_lv_date":["12/05","12/04","12/03","12/02","12/01","11/30","11/29"],"week_lv_one_cnt":[3,1,2,3,1,1,1],"week_lv_six_cnt":[1,2,3,1,1,1,1],"week_lv_twelve_cnt":[1,1,1,1,1,1,1]}};
 // console.log(myJson.results.week_lv_date);
