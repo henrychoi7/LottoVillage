@@ -3,7 +3,7 @@ $(window).ready(function() {
 });
 
 // var url = "http://13.124.207.144/";
-var url = "http://203.249.127.32:65004/";
+var url = "http://localhost:65004/";
 
 
 var login = {
@@ -22,9 +22,11 @@ var login = {
         var $name = $form.find('input[name=login-username]');
         var $password = $form.find('input[name=login-password]');
 
+        console.log('    asd     ' + $name.val() + '   asdfsf    ' + $password.val());
+
         $.ajax({
             type: "POST",
-            url: url + 'login_web',
+            url: url + 'login_admin',
             dataType: "json",
             data: {
                 phone_number : $name.val(),
@@ -32,9 +34,10 @@ var login = {
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    window.location.href = '/Client_web/lottoVillage_main.html';
+                    window.location.href = '/lottoVillage_main.html';
                 } else {
                     alert('로그인에 실패하셨습니다. 다시 로그인해주세요!');
+                    window.location.href = '/lottoVillage_loginAdmin.html';
                 }
             },
             error: function(request,status,error){

@@ -1,5 +1,6 @@
 module.exports = function(app) {
     var main = require(process.cwd() + '/app/web/controllers/main.server.controller');
+    app.get('/lottoVillage_main', main.main);
     app.get('/anaylze_user', main.retrieveAnalyzeUser);
     app.get('/week_lv', main.retrieveWeekLv);
     app.get('/today_lv', main.retrieveTodayLv);

@@ -1,5 +1,9 @@
 var pool = require(process.cwd() + '/config/maria.pool');
 
+exports.productManage = function(req, res){
+    res.productManage('lottoVillage_productManage.html');
+};
+
 exports.retrieveProductList = function (req, res) {
     pool.getConnection(function (err, connection) {
         connection.query({
@@ -22,7 +26,7 @@ exports.retrieveProductList = function (req, res) {
     });
 };
 
-exports.insertProduct = function (req, res) {
+exports.registerProduct = function (req, res) {
     var requestProductCode,
         requestProductName,
         requestProductPrice,

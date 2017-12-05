@@ -52,14 +52,15 @@ module.exports = function () {
     // Mobile
     require(process.cwd() + '/app/mobile/routes/algorithm.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/index.server.route')(app);
-    require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/participation.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
     require(process.cwd() + '/app/mobile/routes/user.server.route')(app);
 
     // Web
-    require(process.cwd() + '/app/web/routes/user.server.route')(app);
-    require(process.cwd() + '/app/web/routes/product.server.route')(app);
+    require(process.cwd() + '/app/web/routes/index.server.route')(app);
     require(process.cwd() + '/app/web/routes/main.server.route')(app);
+    require(process.cwd() + '/app/web/routes/product.server.route')(app);
+    require(process.cwd() + '/app/web/routes/user.server.route')(app);
 
     app.use(express.static(process.cwd() + '/public'));
 

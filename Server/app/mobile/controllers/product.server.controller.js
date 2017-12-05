@@ -20,7 +20,7 @@ exports.render = function(req, res){
 	})
 };
 
-exports.reward_list_info = function (req, res) {
+/*exports.reward_list_info = function (req, res) {
     var requestRewardNumber = req.query.product_code;
 
     pool.getConnection(function (err, connection) {
@@ -57,9 +57,9 @@ exports.reward_list_info = function (req, res) {
                 }
             });
     });
-};
+};*/
 
-exports.reward_exchange_info = function (req, res) {
+/*exports.reward_exchange_info = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
         requestRewardNumber = req.query.product_code,
         requestPhoneNumber;
@@ -127,7 +127,7 @@ exports.reward_exchange_info = function (req, res) {
                     });
             });
     });
-};
+};*/
 
 exports.retrieveProductList = function (req, res) {
     pool.getConnection(function (err, connection) {

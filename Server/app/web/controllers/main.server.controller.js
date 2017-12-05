@@ -1,5 +1,9 @@
 var pool = require(process.cwd() + '/config/maria.pool');
 
+exports.main = function(req, res){
+    res.main('lottoVillage_main.html');
+};
+
 /*[url : /anaylze_user]
     [response]
 - isSuccess (Boolean)
