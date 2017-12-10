@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
     <!-- Page JS Plugins CSS -->
-    <link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css">
+    <!--<link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css">-->
 
     <!-- Bootstrap and OneUI CSS framework -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -207,8 +207,7 @@
                             </select>
                         </div>
                     </form>
-                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
-                    <table class="table table-bordered table-striped js-dataTable-simple">
+                    <table id="userPointTB" class="table table-header-bg">
                         <thead>
                         <tr>
                             <th class="text-center">날짜시간</th>
@@ -257,8 +256,7 @@
                             </select>
                         </div>
                     </form>
-                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
-                    <table class="table table-bordered table-striped js-dataTable-simple">
+                    <table id="userProductTB" class="table table-header-bg">
                         <thead>
                         <tr>
                             <th class="text-center">날짜시간</th>
@@ -307,8 +305,7 @@
                             </select>
                         </div>
                     </form>
-                    <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
-                    <table class="table table-bordered table-striped js-dataTable-simple">
+                    <table id="userLotteryTB" class="table table-header-bg">
                         <thead>
                         <tr>
                             <th class="text-center">날짜시간</th>
@@ -346,13 +343,7 @@
 <script src="assets/js/core/js.cookie.min.js"></script>
 <script src="assets/js/app.js"></script>
 
-<!-- Page Plugins -->
-<script src="assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
-
-<!-- Page JS Code -->
-<script src="assets/js/pages/base_tables_datatables.js"></script>
-
-<!-- LottoVillage JS Code -->
+<!-- My JS Code -->
 <script src="assets/js/lottoVillage_userDetails.js"></script>
 
 </body>

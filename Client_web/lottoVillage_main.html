@@ -143,7 +143,7 @@
                                 <small><i class="si si-calendar"></i> Today</small>
                             </div>
                             <div class="font-s12 font-w700">오늘 가입자수</div>
-                            <a id="USER_TOT_TODAY" class="h2 font-w300 text-primary" href="" data-toggle="countTo" data-to="93"></a>
+                            <a id="USER_TOT_TODAY" class="h2 font-w300 text-primary" href="">0</a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                                 <small><i class="si si-calendar"></i> Total</small>
                             </div>
                             <div class="font-s12 font-w700">총 회원수</div>
-                            <a id="USER_TOT" class="h2 font-w300 text-primary" href="" data-toggle="countTo" data-to="480950"></a>
+                            <a id="USER_TOT" class="h2 font-w300 text-primary" href="">0</a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                                 <small><i class="si si-calendar"></i> Rate</small>
                             </div>
                             <div class="font-s12 font-w700">접속률</div>
-                            <a id="USER_RATE_LOGIN" class="h2 font-w300 text-primary" href="" data-toggle="countTo" data-to="64" data-after="%"></a>
+                            <a id="USER_RATE_LOGIN" class="h2 font-w300 text-primary" href="">0</a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                                 <small><i class="si si-calendar"></i> Profit</small>
                             </div>
                             <div class="font-s12 font-w700">실수익액</div>
-                            <a class="h2 font-w300 text-primary" href="" data-toggle="countTo" data-to="29930" data-before="&#8361;"></a>
+                            <a class="h2 font-w300 text-primary" href="">&#8361;120</a>
                         </div>
                     </div>
                 </div>
@@ -203,19 +203,19 @@
                             <div class="row items-push-2x text-center push-20-t">
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-users fa-2x"></i></div>
-                                    <div class="h5 text-muted">오늘 참가수 148,000명</div>
+                                    <div id="TODAY_LV_TOT_CNT" class="h5 text-muted">오늘 참가수 148,000명</div>
                                 </div>
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-ticket fa-2x"></i>1</div>
-                                    <div class="h5 text-muted">1시간 4,020명</div>
+                                    <div id="TODAY_LV_ONE_CNT" class="h5 text-muted">1시간 4,020명</div>
                                 </div>
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-ticket fa-2x"></i>6</div>
-                                    <div class="h5 text-muted">6시간 10,239명</div>
+                                    <div id="TODAY_LV_SiX_CNT" class="h5 text-muted">6시간 10,239명</div>
                                 </div>
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-ticket fa-2x"></i>12</div>
-                                    <div class="h5 text-muted">12시간 13,231명</div>
+                                    <div id="TODAY_LV_TWELVE_CNT" class="h5 text-muted">12시간 13,231명</div>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                                 </div>
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-gift fa-2x"></i></div>
-                                    <div class="h5 text-muted">지급 포인트 14513p</div>
+                                    <div id="TOT_POINT" class="h5 text-muted">지급 포인트 14513p</div>
                                 </div>
                                 <div class="col-xs-6 col-lg-3">
                                     <div class="push-15"><i class="fa fa-low-vision fa-2x"></i></div>
@@ -268,7 +268,7 @@
                             <h3 class="block-title">인기 상품</h3>
                         </div>
                         <div class="block-content">
-                            <table class="table table-striped table-borderless table-header-bg">
+                            <table id="productLankTB" class="table table-striped table-borderless table-header-bg">
                                 <thead>
                                 <tr>
                                     <th class="text-center" style="width: 50px;">순위</th>
@@ -422,19 +422,23 @@
 <script src="assets/js/core/js.cookie.min.js"></script>
 <script src="assets/js/app.js"></script>
 
+
 <!-- Page Plugins -->
 <script src="assets/js/plugins/chartjs/Chart.min.js"></script>
 <script src="assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
-<!-- Page JS Code -->
-<script src="assets/js/pages/base_pages_dashboard_v2.js"></script>
+<!-- My JS Code -->
 <script src="assets/js/lottoVillage_charts.js"></script>
+<script src="assets/js/base_pages_dashboard_v2.js"></script>
+
 
 <script>
     jQuery(function () {
         // Init page helpers (CountTo plugin)
         App.initHelpers('appear-countTo');
     });
+
 </script>
+
 </body>
 </html>

@@ -8,8 +8,9 @@ $(window).ready(function() {
     BaseCompCharts.init();
 });
 
-var url = "http://localhost:65004/";
+// var url = "http://localhost:65004/";
 // var url = "http://192.9.44.53:65004/";
+var url = "http://203.249.127.32:65004/";
 
 var week1 = [];
 var week6 = [];
@@ -186,19 +187,19 @@ var BaseCompCharts = {
             barColor: '#fadb7d',
             tooltipFormat: '{{value}}'
         };
-        jQuery('.js-slc-bar1').sparkline([1,2,4,27,3,2], $barOptions);
+        jQuery('.js-slc-bar1').sparkline(week1, $barOptions);
         //[1,2,4,27,3,2]
 
         $barOptions['barColor']         = '#abe37d';
         // $barOptions['tooltipPrefix']    = '';
         // $barOptions['tooltipSuffix']    = '';
-        jQuery('.js-slc-bar2').sparkline([1,7,2,1,3,2], $barOptions);
+        jQuery('.js-slc-bar2').sparkline(week6, $barOptions);
         //[1,7,2,1,3,2]
 
         $barOptions['barColor']         = '#faad7d';
         // $barOptions['tooltipPrefix']    = '';
         // $barOptions['tooltipSuffix']    = ' Sales';
-        jQuery('.js-slc-bar3').sparkline([3,2,4,5,3,2], $barOptions);
+        jQuery('.js-slc-bar3').sparkline(week12, $barOptions);
         //[3,2,4,5,3,2]
 
         // Pie Charts
@@ -209,14 +210,14 @@ var BaseCompCharts = {
             sliceColors: ['#fadb7d','#faad7d', '#a886fb', '#75b0eb','#abe37d'],
             tooltipFormat: '{{value}}'
         };
-        jQuery('.js-slc-pie1').sparkline([1,2,4,27,3,2], $pieCharts);
+        jQuery('.js-slc-pie1').sparkline(week1, $pieCharts);
 
         $pieCharts['tooltipPrefix'] = '$ ';
         $pieCharts['tooltipSuffix'] = '';
-        jQuery('.js-slc-pie2').sparkline([1,7,2,1,3,2], $pieCharts);
+        jQuery('.js-slc-pie2').sparkline(week6, $pieCharts);
 
         $pieCharts['tooltipPrefix'] = '';
         $pieCharts['tooltipSuffix'] = ' Sales';
-        jQuery('.js-slc-pie3').sparkline([3,2,4,5,3,2], $pieCharts);
+        jQuery('.js-slc-pie3').sparkline(week12, $pieCharts);
     }
 };
