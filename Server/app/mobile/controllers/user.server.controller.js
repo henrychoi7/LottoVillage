@@ -100,9 +100,8 @@ exports.deleteUser = function (req, res) {
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: 'UPDATE USER_INFO \
-                    SET USER_STATUS = 2 \
-                    WHERE PHONE_NUMBER = ?',
+                sql: "DELETE FROM USER_INFO \
+                    WHERE PHONE_NUMBER = ?",
                 timeout: 10000
             },
             [requestPhoneNumber],
@@ -116,6 +115,81 @@ exports.deleteUser = function (req, res) {
             });
     });
 };
+
+exports.updateUser = function (req, res) {
+    var requestName = req.body.name,
+        requestPassword = req.body.password,
+        requestPasswordConfirm = req.body.password_confirm,
+        requestPhoneNumber = req.body.phone_number;
+
+    if (!requestName) return res.json({isSuccess: false, errorMessage: "이름을 입력해주세요."});
+    if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
+    if (!requestPasswordConfirm) return res.json({isSuccess: false, errorMessage: "비밀번호확인값을 입력해주세요."});
+    if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
+
+    requestName = requestName.replace(/(\s*)/g, "");
+    requestPassword = requestPassword.replace(/(\s*)/g, "");
+    requestPasswordConfirm = requestPasswordConfirm.replace(/(\s*)/g, "");
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    if (requestName.length < 3 || requestName.length > 10) return res.json({
+        isSuccess: false,
+        errorMessage: "이름은 3~10자리를 입력해주세요."
+    });
+    if (requestPassword.length < 6 || requestPassword.length > 10) return res.json({
+        isSuccess: false,
+        errorMessage: "비밀번호는 6~10자리를 입력해주세요."
+    });
+    if (requestPasswordConfirm.length < 6 || requestPasswordConfirm.length > 10) return res.json({
+        isSuccess: false,
+        errorMessage: "비밀번호확인값은 6~10자리를 입력해주세요."
+    });
+
+    if (requestPassword !== requestPasswordConfirm) return res.json({
+        isSuccess: false,
+        errorMessage: "비밀번호가 일치하지 않습니다."
+    });
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD \
+                  FROM USER_INFO \
+                  WHERE PHONE_NUMBER = ? \
+                  AND PASSWORD = ?',
+                timeout: 10000
+            },
+            [requestPhoneNumber, requestPassword],
+            function (error, results, columns) {
+                if (error) {
+                    connection.release();
+                    logger().info('로그인 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                }
+
+                pool.getConnection(function (err, connection) {
+                    connection.query({
+                            sql: 'UPDATE USER_INFO \
+                              SET PASSWORD = ?, NAME = ? \
+                              WHERE PHONE_NUMBER = ?',
+                            timeout: 10000
+                        },
+                        [requestPassword, requestName, requestPhoneNumber],
+                        function (error, results, columns) {
+                            connection.release();
+
+                            if (error) {
+                                logger().info('회원 정보 수정 - 에러코드 : ' + error.code + ', 에러내용:' + error.sqlMessage);
+                                return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                            }
+
+                            logger().info('회원 정보 수정 - 전화번호 : ' + requestPhoneNumber);
+                            res.json({isSuccess: true, errorMessage: ""});
+                        });
+                });
+            });
+    });
+};
+
 
 exports.login = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),

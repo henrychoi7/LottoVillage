@@ -10,7 +10,7 @@ exports.retrieveProductList = function (req, res) {
                 sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \
                   CASE PRODUCT_STATUS WHEN 1 THEN 'Y' \
                     ELSE 'N' END PRODUCT_STATUS \
-                    , PRODUCT_CONTENTS \
+                    , PRODUCT_CONTENTS, PRODUCT_CATEGORY \
                     FROM PRODUCT_MASTER",
                 timeout: 10000
             },

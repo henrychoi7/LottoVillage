@@ -1,9 +1,5 @@
 $(window).ready(function() {
     userDetails.init();
-    // @TODO: table paging (datatables plugins)
-    // $('#example').DataTable( {
-    //     "ajax": '../ajax/data/arrays.txt'
-    // } );
 });
 
 // 이전 화면에서 보내준 핸드폰 번호 저장하기
@@ -11,8 +7,8 @@ var phone = location.href.substr(
     location.href.lastIndexOf('=') + 1
 );
 
-// var url = "http://13.124.207.144/";
-var url = "http://localhost:65004/";
+// var url = "http://localhost:65004/";
+var url = "http://192.9.44.53:65004/";
 
 var userDetails = {
     init: function() {
@@ -25,14 +21,13 @@ var userDetails = {
     initEvent: function() {
         var _this = this;
 
-        // $('#detail-point-month').change(this.getPointList);
         $(document).on('change','#detail-point-month', this.getPointList);
         $(document).on('change','#detail-product-month', this.getProductList);
         $(document).on('change','#detail-lottery-month', this.getLotteryList);
     },
 
     drawPointTable : function(userData){
-        var wrapper = $('#detail-point');
+        var wrapper = $('#userPointTB');
         var viewTable = wrapper.find('tbody');
         viewTable.html('');
 
@@ -42,7 +37,6 @@ var userDetails = {
             var viewUser = $("<tr>");
             viewUser
                 .html(
-                    "<tr>\n" +
                     "     <td class=\"text-center\">" + user.DATE_TIME + "</td>\n" +
                     "     <td class=\"text-center\">" + user.CONTENTS + "</td>\n" +
                     "     <td class=\"text-center font-w600\">" + user.POINT + "</td>\n" +
@@ -53,7 +47,7 @@ var userDetails = {
     },
 
     drawProductTable : function(userData){
-        var wrapper = $('#detail-product');
+        var wrapper = $('#userProductTB');
         var viewTable = wrapper.find('tbody');
         viewTable.html('');
 
@@ -63,7 +57,6 @@ var userDetails = {
             var viewUser = $("<tr>");
             viewUser
                 .html(
-                    "<tr>\n" +
                     "     <td class=\"text-center\">" + user.DATE_TIME + "</td>\n" +
                     "     <td class=\"text-center\">" + user.CONTENTS + "</td>\n" +
                     "     <td class=\"text-center font-w600\">" + user.POINT + "</td>\n" +
@@ -74,7 +67,7 @@ var userDetails = {
     },
 
     drawLotteryTable : function(userData){
-        var wrapper = $('#detail-point');
+        var wrapper = $('#userLotteryTB');
         var viewTable = wrapper.find('tbody');
         viewTable.html('');
 
@@ -84,7 +77,6 @@ var userDetails = {
             var viewUser = $("<tr>");
             viewUser
                 .html(
-                    "<tr>\n" +
                     "     <td class=\"text-center\">" + user.DATE_TIME + "</td>\n" +
                     "     <td class=\"text-center\">" + user.CONTENTS + "</td>\n" +
                     "     <td class=\"text-center font-w600\">" + user.POINT + "</td>\n" +
@@ -95,7 +87,6 @@ var userDetails = {
     },
 
     getPointList: function() {
-        console.log('asdf');
         var point_year = $('#detail-point-year').val();
         var point_month = $('#detail-point-month').val();
 

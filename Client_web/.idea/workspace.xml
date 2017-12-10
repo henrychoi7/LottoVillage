@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3b6a3be-8e96-4f98-9edb-9c1dad61dc48" name="Default" comment="">
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/lottoVillage_reward.js" afterPath="$PROJECT_DIR$/assets/js/lottoVillage_reward.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/lottoVillage_userAdmin.js" afterPath="$PROJECT_DIR$/assets/js/lottoVillage_userAdmin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lottoVillage_rewardAdmin.html" afterPath="$PROJECT_DIR$/lottoVillage_rewardAdmin.html" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assets/js/lottoVillage_charts.js" afterPath="$PROJECT_DIR$/assets/js/lottoVillage_charts.js" />
       <change beforePath="$PROJECT_DIR$/assets/js/lottoVillage_login.js" afterPath="$PROJECT_DIR$/assets/js/lottoVillage_login.js" />
@@ -18,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/lottoVillage_rewardRegist.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/lottoVillage_userAdmin.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/lottoVillage_userDetails.html" afterPath="$PROJECT_DIR$/lottoVillage_userDetails.html" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,11 +38,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+      <file leaf-file-name="lottoVillage_rewardAdmin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lottoVillage_rewardAdmin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding>
+                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#0;n#ul#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#14685#14691#0" expanded="true" />
+              </folding>
+=======
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -44,8 +82,13 @@
       <file leaf-file-name="lottoVillage_charts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_charts.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-1455">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
             <state relative-caret-position="60">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
               <folding />
             </state>
           </provider>
@@ -54,8 +97,13 @@
       <file leaf-file-name="lottoVillage_userAdmin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_userAdmin.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1782">
+              <caret line="115" column="20" lean-forward="true" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+=======
             <state relative-caret-position="45">
               <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
               <folding />
             </state>
           </provider>
@@ -64,7 +112,11 @@
       <file leaf-file-name="lottoVillage_userDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_userDetails.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-189">
+=======
             <state relative-caret-position="1545">
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
               <caret line="103" column="52" lean-forward="false" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="52" />
               <folding />
             </state>
@@ -74,8 +126,13 @@
       <file leaf-file-name="lottoVillage_login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_login.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-239">
+              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+=======
             <state relative-caret-position="75">
               <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
               <folding />
             </state>
           </provider>
@@ -84,12 +141,18 @@
       <file leaf-file-name="lottoVillage_reward.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_reward.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="195">
+              <caret line="114" column="50" lean-forward="false" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+              <folding />
+=======
             <state relative-caret-position="1725">
               <caret line="115" column="50" lean-forward="false" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
               <folding>
                 <marker date="1512467314000" expanded="true" signature="12043:12262" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
                 <marker date="1512467314000" expanded="true" signature="12043:12272" ph="{...}" />
               </folding>
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
             </state>
           </provider>
         </entry>
@@ -256,6 +319,26 @@
               <item name="Client_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Client_web" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+            <path>
+              <item name="Client_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client_web" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client_web" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client_web" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+=======
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           </expand>
           <select />
         </subPane>
@@ -315,12 +398,19 @@
       <workItem from="1512354759747" duration="31525000" />
       <workItem from="1512430240235" duration="11381000" />
       <workItem from="1512452511613" duration="4638000" />
+<<<<<<< HEAD
+=======
       <workItem from="1512470620683" duration="115000" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="73730000" />
+=======
     <option name="totallyTimeSpent" value="73845000" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="22" width="1399" height="878" extended-state="6" />
@@ -633,8 +723,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lottoVillage_main.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="390">
+          <caret line="433" column="24" lean-forward="true" selection-start-line="433" selection-start-column="24" selection-end-line="433" selection-end-column="24" />
+=======
         <state relative-caret-position="5430">
           <caret line="433" column="24" lean-forward="false" selection-start-line="433" selection-start-column="24" selection-end-line="433" selection-end-column="24" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           <folding>
             <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -648,30 +743,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="228">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+=======
         <state relative-caret-position="180">
           <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_charts.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-1455">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
         <state relative-caret-position="60">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_login.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-239">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+=======
         <state relative-caret-position="75">
           <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_reward.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="195">
+          <caret line="114" column="50" lean-forward="false" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+=======
         <state relative-caret-position="1725">
           <caret line="115" column="50" lean-forward="false" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
           <folding>
@@ -685,10 +799,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/lottoVillage_rewardAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#0;n#ul#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#14685#14691#0" expanded="true" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_userDetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1545">
@@ -701,6 +835,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <folding />
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_userDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="103" column="52" lean-forward="false" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/lottoVillage_userAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="115" column="20" lean-forward="true" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -2,9 +2,8 @@ $(window).ready(function() {
     login.init();
 });
 
-// var url = "http://13.124.207.144/";
-var url = "http://localhost:65004/";
-
+// var url = "http://localhost:65004/";
+var url = "http://192.9.44.53:65004/";
 
 var login = {
     init: function() {
@@ -21,8 +20,6 @@ var login = {
         var $form = $('form[name=admin-login]');
         var $name = $form.find('input[name=login-username]');
         var $password = $form.find('input[name=login-password]');
-
-        console.log('    asd     ' + $name.val() + '   asdfsf    ' + $password.val());
 
         $.ajax({
             type: "POST",
