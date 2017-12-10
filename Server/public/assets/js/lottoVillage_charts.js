@@ -9,7 +9,7 @@ $(window).ready(function() {
 });
 
 // var url = "http://localhost:65004/";
-var url = "http://192.9.44.53:65004";
+var url = "http://192.9.44.53:65004/";
 
 var week1 = [];
 var week6 = [];
