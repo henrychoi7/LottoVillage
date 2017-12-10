@@ -5,7 +5,7 @@ $(window).ready(function() {
 // 테스트용
 var myJson = {"isSuccess":true,"results":[{"PRODUCT_CODE":1,"PRODUCT_NAME":"기프티콘","PRODUCT_PRICE":9000,"PRODUCT_STATUS":"Y","PRODUCT_CONTENTS":"카카오 무지"},{"PRODUCT_CODE":2,"PRODUCT_NAME":"초콜릿","PRODUCT_PRICE":2000,"PRODUCT_STATUS":"N","PRODUCT_CONTENTS":"노브랜드"},{"PRODUCT_CODE":4,"PRODUCT_NAME":"테스트3","PRODUCT_PRICE":3000,"PRODUCT_STATUS":"Y","PRODUCT_CONTENTS":"테스트3-설명"},{"PRODUCT_CODE":5,"PRODUCT_NAME":"테스트4","PRODUCT_PRICE":4000,"PRODUCT_STATUS":"N","PRODUCT_CONTENTS":"테스트4-설명"},{"PRODUCT_CODE":6,"PRODUCT_NAME":"테스트5","PRODUCT_PRICE":5000,"PRODUCT_STATUS":"Y","PRODUCT_CONTENTS":"테스트5-설명"},{"PRODUCT_CODE":7,"PRODUCT_NAME":"테스트6","PRODUCT_PRICE":6000,"PRODUCT_STATUS":"N","PRODUCT_CONTENTS":"테스트6-설명"}]};
 // var url = "http://13.124.207.144/";
-var url = "http://192.9.44.53:65004/";
+var url = "http://localhost:65004/";
 
 var reward = {
     init: function() {
@@ -91,7 +91,7 @@ var reward = {
 
         $.ajax({
             type: "POST",
-            url: url + 'register_product',
+            url: url + 'product_register',
             dataType: "json",
             data: {
                 product_code : parseInt($code.val()),
@@ -102,7 +102,7 @@ var reward = {
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    window.location.href = '/Client_web/lottoVillage_rewardAdmin.html';
+                    window.location.href = '/lottoVillage_productManage.html';
                 }
             },
             error: function(request,status,error){
@@ -112,6 +112,7 @@ var reward = {
     },
 
     postProductDelete: function() {
+<<<<<<< HEAD
         $(this).parents('#product-delete').hide();
         // var product_code = $(this).closest("#product_code").text();
         //
@@ -131,6 +132,26 @@ var reward = {
         //         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         //     }
         // });
+=======
+        var product_code = $(this).closest("#product_code").text();
+
+        $.ajax({
+            type: "POST",
+            url: url + 'product_delete',
+            dataType: "json",
+            data: {
+                product_code : parseInt(product_code.val())
+            },
+            success: function(resData) {
+                if (resData.isSuccess == true){
+                    window.location.href = '/lottoVillage_productManage.html';
+                }
+            },
+            error: function(request,status,error){
+                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            }
+        });
+>>>>>>> 3c604d23b6b533d0a73db7493c8b2686a8d90245
     },
 
     postProductUpdate: function() {
@@ -143,7 +164,7 @@ var reward = {
 
         $.ajax({
             type: "POST",
-            url: url + 'update_product',
+            url: url + 'product_update',
             dataType: "json",
             data: {
                 product_code : parseInt($code.val()),
@@ -154,7 +175,7 @@ var reward = {
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    window.location.href = '/Client_web/lottoVillage_rewardAdmin.html';
+                    window.location.href = '/lottoVillage_productManage.html';
                 }
             },
             error: function(request,status,error){
