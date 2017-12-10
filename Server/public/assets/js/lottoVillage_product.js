@@ -34,7 +34,7 @@ var reward = {
             var category;
             var categoryTag;
 
-            switch(Number(product.CATEGORY)){
+            switch(Number(product.PRODUCT_CATEGORY)){
                 case 0:
                     category = '외식';
                     categoryTag = 'bg-primary';
@@ -80,7 +80,7 @@ var reward = {
                     "                        <td>No. <strong class=\"product_code\">" + product.PRODUCT_CODE + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
-                    "                        <td>Category <strong>" + product.PRODUCT_CATEGORY + "</strong></td>\n" +
+                    "                        <td>Category <strong>" + category + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
                     "                        <td>Description <strong>이 상품은 ...</strong></td>\n" +
@@ -89,7 +89,7 @@ var reward = {
                     "                  </table>\n" +
                     "                </div>\n" +
                     "                <div class=\"block-content block-content-mini block-content-full bg-gray-lighter\">\n" +
-                    "                  <span class=\"productUpdateBtn btn btn-default\">수정</span>\n" +
+                    "                  <span class=\"productUpdateBtn btn btn-default\" data-toggle=\"modal\" data-target=\"#modifyModal\">수정</span>\n" +
                     "                  <span class=\"productDeleteBtn btn btn-default\">삭제</span>\n" +
                     "                </div>\n" +
                     "              </a>\n" +
@@ -120,7 +120,8 @@ var reward = {
         var $code = $form.find('input[name=product_code]');
         var $name = $form.find('input[name=product_name]');
         var $price = $form.find('input[name=product_price]');
-        var $category = $form.find('input[name=product_category]');
+        var $status = $form.find('input[name=product_status]:checked');
+        var $category = $form.find('input[name=product_category]:checked');
         var $contents = $form.find('textarea[name=product_contents]');
 
         $.ajax({
@@ -131,13 +132,16 @@ var reward = {
                 product_code : parseInt($code.val()),
                 product_name : $name.val(),
                 product_price : parseInt($price.val()),
-                // product_category : parseInt($category.val()),
-                product_contents : $contents.val()
+                product_status : parseInt($status.val()),
+                product_contents : $contents.val(),
+                product_category : $category.val()
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
                     console.log('success product');
                     window.location.href = '/lottoVillage_productManage.html';
+                } else {
+                    alert('상품 등록에 실패하였습니다. 상품 정보를 다시 확인해주세요!');
                 }
             },
             error: function(request,status,error){
@@ -173,7 +177,8 @@ var reward = {
         var $code = $form.find('input[name=product_code]');
         var $name = $form.find('input[name=product_name]');
         var $price = $form.find('input[name=product_price]');
-        var $category = $form.find('input[name=product_category]');
+        var $status = $form.find('input[name=product_status]:checked');
+        var $category = $form.find('input[name=product_category]:checked');
         var $contents = $form.find('input[name=product_contents]');
 
         $.ajax({
@@ -181,11 +186,12 @@ var reward = {
             url: url + 'product_update',
             dataType: "json",
             data: {
-                product_code : parseInt($code.val()),
                 product_name : $name.val(),
                 product_price : parseInt($price.val()),
+                product_status : parseInt($status.val()),
                 product_contents : $category.val(),
-                product_category : parseInt($contents.val())
+                product_category : $contents.val(),
+                product_code : parseInt($code.val())
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
