@@ -2,7 +2,8 @@ $(window).ready(function() {
     reward.init();
 });
 
-var url = "http://localhost:65004/";
+// var url = "http://localhost:65004/";
+var url = "http://192.9.44.53:65004";
 
 var reward = {
     init: function() {
@@ -24,15 +25,9 @@ var reward = {
 
         for (var id in productData) {
             var product = productData[id];
-
-            // 0 : store_meal  외식
-            // 1 : store_coffee커피/베이커리
-            // 2 : store_convenience편의점
-            // 3 : store_beauty        뷰티
-            // 4 : store_culture          문화생활
-            // 5 : store_etc                기타
             var category;
             var categoryTag;
+            var status;
 
             switch(Number(product.PRODUCT_CATEGORY)){
                 case 0:
@@ -63,6 +58,17 @@ var reward = {
                     categoryTag = 'bg-warning';
             }
 
+            switch(Number(product.PRODUCT_STATUS)){
+                case 0:
+                    status = '판매 중지';
+                    break;
+                case 1:
+                    status = '판매중';
+                    break;
+                default:
+                    status = '판매중';
+            }
+
             var viewProduct = $("<div class=\"col-sm-6 col-lg-3\">");
             viewProduct
                 .html(
@@ -81,6 +87,9 @@ var reward = {
                     "                      </tr>\n" +
                     "                      <tr>\n" +
                     "                        <td>Category <strong>" + category + "</strong></td>\n" +
+                    "                      </tr>\n" +
+                    "                      <tr>\n" +
+                    "                        <td>Status <strong>" + status + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
                     "                        <td>Description <strong>이 상품은 ...</strong></td>\n" +
@@ -107,6 +116,8 @@ var reward = {
             success: function(resData) {
                 if (resData.isSuccess == true){
                     reward.drawProductTable(resData.results);
+                } else {
+                    console.log('get product list 실패 ');
                 }
             },
             error: function(request,status,error){
@@ -188,7 +199,7 @@ var reward = {
             data: {
                 product_name : $name.val(),
                 product_price : parseInt($price.val()),
-                product_status : parseInt($status.val()),
+                product_status : $status.val(),
                 product_contents : $category.val(),
                 product_category : $contents.val(),
                 product_code : parseInt($code.val())
