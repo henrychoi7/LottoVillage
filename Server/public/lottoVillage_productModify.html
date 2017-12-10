@@ -158,9 +158,32 @@
               <!-- Steps Content -->
               <div class="block-content tab-content">
                 <div class="form-group">
+                  <label class="col-sm-8 col-sm-offset-2">상품 카테고리</label>
                   <div class="col-sm-8 col-sm-offset-2">
-                    <label for="simple-classic-code">상품 코드</label>
-                    <input class="form-control" type="text" id="simple-classic-code" name="product_code" placeholder="상품 코드를 적어주세요.">
+                    <label class="radio-inline" for="product-category-0">
+                      <input type="radio" id="product-category-0" name="product_category" value="0"> 외식
+                    </label>
+                    <label class="radio-inline" for="product-category-1">
+                      <input type="radio" id="product-category-1" name="product_category" value="1"> 카페
+                    </label>
+                    <label class="radio-inline" for="product-category-2">
+                      <input type="radio" id="product-category-2" name="product_category" value="2"> 편의점
+                    </label>
+                    <label class="radio-inline" for="product-category-3">
+                      <input type="radio" id="product-category-3" name="product_category" value="3"> 뷰티
+                    </label>
+                    <label class="radio-inline" for="product-category-4">
+                      <input type="radio" id="product-category-4" name="product_category" value="4"> 문화생활
+                    </label>
+                    <label class="radio-inline" for="product-category-5">
+                      <input type="radio" id="product-category-5" name="product_category" value="5"> 기타
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <label for="product-code">상품 코드</label>
+                    <input class="form-control" type="text" id="product-code" name="product_code" placeholder="상품 코드를 적어주세요.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -176,9 +199,14 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label class="col-sm-8 col-sm-offset-2">상품 상태</label>
                   <div class="col-sm-8 col-sm-offset-2">
-                    <label for="simple-classic-email">상품 카테고리</label>
-                    <input class="form-control" type="email" id="simple-classic-email" name="product_category" placeholder="상품의 카테고리를 적어주세요. 0:외식, 1:카페, 2:편의점, 3:뷰티, 4:문화생활, 5:기타">
+                    <label class="radio-inline" for="product-status-0">
+                      <input type="radio" id="product-status-0" name="product_status" value="0"> 판매중지
+                    </label>
+                    <label class="radio-inline" for="product-status-1">
+                      <input type="radio" id="product-status-1" name="product_status" value="1" checked> 판매중
+                    </label>
                   </div>
                 </div>
                 <div class="form-group">
