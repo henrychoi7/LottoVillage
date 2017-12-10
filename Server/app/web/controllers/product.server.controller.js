@@ -7,7 +7,7 @@ exports.productManage = function(req, res){
 exports.retrieveProductList = function (req, res) {
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \
+                sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_CATEGORY \
                   CASE PRODUCT_STATUS WHEN 1 THEN 'Y' \
                     ELSE 'N' END PRODUCT_STATUS \
                     , PRODUCT_CONTENTS \
