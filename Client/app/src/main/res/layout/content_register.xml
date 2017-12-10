@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
+    android:background="@drawable/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.RegisterActivity"
-    tools:showIn="@layout/activity_register"
-    android:background="@drawable/background">
+    tools:showIn="@layout/activity_register">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,24 +23,28 @@
                 android:id="@+id/register_edit_name"
                 style="@style/DefaultEditText"
                 android:hint="@string/name"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="@color/white" />
 
             <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/register_edit_password"
                 style="@style/DefaultEditText"
                 android:hint="@string/password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="@color/white" />
 
             <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/register_edit_password_confirm"
                 style="@style/DefaultEditText"
                 android:hint="@string/confirm_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:textColorHint="@color/white">
 
                 <EditText
                     android:id="@+id/register_edit_phone_number"
@@ -49,6 +53,7 @@
                     android:drawableStart="@drawable/ic_phone_24dp"
                     android:hint="@string/phone_number"
                     android:inputType="phone"
+                    android:textColorHint="@color/white"
                     tools:ignore="TextFields" />
 
                 <Button
@@ -75,15 +80,16 @@
                     style="@style/DefaultEditText"
                     android:layout_weight="2"
                     android:drawableStart="@drawable/ic_verified_user_24dp"
-                    android:hint="@string/confirm_certified" />
+                    android:hint="@string/confirm_certified"
+                    android:textColorHint="@color/white" />
 
                 <Button
                     android:id="@+id/register_button_confirm_certified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:focusable="false"
                     android:background="@drawable/border"
+                    android:focusable="false"
                     android:inputType="number"
                     android:onClick="customOnClick"
                     android:text="@string/certified"
@@ -104,10 +110,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_5"
                 android:layout_marginTop="@dimen/margin_5"
+                android:buttonTint="@color/white"
                 android:checkMark="?android:attr/listChoiceIndicatorMultiple"
                 android:onClick="customOnClick"
-                android:textColor="@color/white"
-                android:text="@string/service_terms_conditions" />
+                android:text="@string/service_terms_conditions"
+                android:textColor="@color/white" />
 
             <CheckedTextView
                 android:id="@+id/register_checked_text_personal_information"
@@ -117,15 +124,15 @@
                 android:layout_marginTop="@dimen/margin_5"
                 android:checkMark="?android:attr/listChoiceIndicatorMultiple"
                 android:onClick="customOnClick"
-                android:textColor="@color/white"
-                android:text="@string/personal_information_terms_conditions" />
+                android:text="@string/personal_information_terms_conditions"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/register_button_register"
                 style="@style/ConfirmButton"
+                android:background="@drawable/border"
                 android:enabled="true"
                 android:onClick="customOnClick"
-                android:background="@drawable/border"
                 android:text="@string/registered" />
         </LinearLayout>
     </LinearLayout>

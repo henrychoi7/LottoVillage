@@ -32,7 +32,7 @@ exports.prediction_algorithm = function (req, res) {
                     logger().info('알고리즘 결과 데이터 수신 오류 - 에러내용 : ' + err.message);
                 }
                 console.log('선택 알고리즘 결과 : %j', results);
-                predictionResult.requestPredictionNumber1 = 1;
+                predictionResult.requestPredictionNumber1 = 1;  // 한똥코드
                 predictionResult.requestPredictionNumber1 = Number(results[0]);
                 predictionResult.requestPredictionNumber2 = Number(results[1]);
                 predictionResult.requestPredictionNumber3 = Number(results[2]);

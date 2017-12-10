@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DefaultParentLayout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.PredictNumberActivity"
+    tools:showIn="@layout/activity_algorithms"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_20">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:alpha="0.7"
+            android:background="@drawable/border_1"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/prediction_number"
+                android:textColor="@color/white" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prediction_numbers"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/bonus_number"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lotto_prediction_1"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_0"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_10"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_3"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_20"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_4"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_30"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_5"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_40"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_6"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/attr_lotto_number_background_blue"
+                    android:text="0" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add"
+                    app:srcCompat="@drawable/ic_add_white_24dp" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_bonus"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/attr_lotto_number_background_red"
+                    android:text="0" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:padding="10dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -16,98 +16,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:padding="@dimen/margin_10">
 
             <TextView
-                android:id="@+id/participation_history_text_participation_title"
+                android:id="@+id/participation_history_date_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/one_hour_lotto_number" />
+                android:text="1999-00-00 00:00"
+                android:layout_weight="1"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/participation_history_contents"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="1시간-꽝"
+                android:layout_weight="1"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/drawing_time" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_event_date_hour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20170909-01" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/participation_history_linear_layout_participation"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/participation_history_point"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/attr_layout_numbers"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_1"
-                    style="@style/DefaultLottoNumberText" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_2"
-                    style="@style/DefaultLottoNumberText" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_3"
-                    style="@style/DefaultLottoNumberText" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_4"
-                    style="@style/DefaultLottoNumberText" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_5"
-                    style="@style/DefaultLottoNumberText" />
-
-                <TextView
-                    android:id="@+id/participation_history_text_participation_6"
-                    style="@style/DefaultLottoNumberText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="당첨 등수 : " />
-
-                <TextView
-                    android:id="@+id/participation_history_text_winner_rate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="당첨 금액 : " />
-
-                <TextView
-                    android:id="@+id/participation_history_text_winner_prize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100,000,000" />
-            </LinearLayout>
+                android:text="1000"
+                android:layout_weight="1"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

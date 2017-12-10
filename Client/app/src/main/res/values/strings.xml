@@ -5,7 +5,7 @@
     <string name="register">회원가입</string>
     <string name="my_info">내정보</string>
     <string name="point_usage_history">포인트 이용내역</string>
-    <string name="lotto_participation_history">로또 참여 현황</string>
+    <string name="lotto_participation_history">LottoVillage 참가 내역</string>
     <string name="product_purchase_history">상품 구매내역</string>
 
     <!-- Common Strings -->
@@ -20,7 +20,6 @@
     <string name="request_login">로그인 인증이 만료되었습니다.\n다시 로그인해주세요.</string>
     <string name="default_history_yyyyMM">YYYY년 MM월</string>
     <string name="default_history_yyyyMMdd">YYYY년 MM월 DD일</string>
-    <string name="product_image">상품이미지</string>
 
     <!-- Main Strings -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -60,6 +59,12 @@
     <string name="total_prize">등위별 총 당첨금액</string>
     <string name="total_number">당첨게임 수</string>
     <string name="per_prize">1게임당 당첨금액</string>
+    <string name="prediction_number_click">예상 번호 추천 받기 ></string>
+    <string name="prediction_number">예상 번호 추천 받기</string>
+    <string name="prediction_numbers">예상 번호</string>
+
+    <!-- Village Strings -->
+    <string name="village_point">빌리지 포인트</string>
 
     <!-- SMS Content -->
     <string name="message_front">(LottoVillage) 인증번호 [</string>
@@ -76,7 +81,7 @@
     <!-- Register Strings -->
     <string name="send_to_request_register">회원가입 중 입니다.</string>
     <string name="complete_to_register">회원가입에 성공하였습니다.</string>
-    <string name="try_to_register">가입하기</string>
+    <string name="try_to_register">회원가입</string>
     <string name="registered">가입완료</string>
     <string name="name">이름 (3~10자리)</string>
     <string name="password">비밀번호 (6~10자리)</string>
@@ -95,9 +100,47 @@
     <string name="deny_value_length">~10자리를 입력해주세요.</string>
     <string name="unmatched_password">비밀번호가 일치하지 않습니다.</string>
 
+    <!-- Updapte Strings -->
+    <string name="send_to_request_update">업데이트중입니다.</string>
+    <string name="complete_to_update">업데이트에 성공하였습니다.</string>
+
     <!-- Information Strings -->
     <string name="update">수정하기</string>
     <string name="delete">탈퇴하기</string>
     <string name="new_password">새로운 비밀번호 (6~10자리)</string>
+    <string name="unmatched_last_password">예전 비밀번호와 일치합니다.</string>
 
+    <!-- Delete Strings -->
+    <string name="delete_user">탈퇴하였습니다.</string>
+
+    <!-- Opensource License -->
+    <string name="body_parser"><b>body-parser 1.17.2</b>\n<u>https://github.com/expressjs/body-parser/blob/HEAD/LICENSE</u>\nCopyright (c) 2014 Jonathan Ong (me@jongleberry.com)\nCopyright (c) 2014-2015 Douglas Christopher Wilson (doug@somethingdoug.com)\nMIT License</string>
+    <string name="cheerio"> <b>cheerio 1.0.0-rc.2</b>\n<u>https://github.com/cheeriojs/cheerio/blob/master/LICENSE</u>\nCopyright (c) 2016 Matt Mueller\nMIT License</string>
+    <string name="compression"><b>compression 1.7.0</b>\n<u>https://github.com/expressjs/compression</u>\nCopyright (c) 2014 Jonathan Ong (me@jongleberry.com)\n
+Copyright (c) 2014-2015 Douglas Christopher Wilson (doug@somethingdoug.com)\nMIT License</string>
+    <string name="cookie_parser"><b>cookie-parser 1.4.3</b>\n<u>https://www.npmjs.com/package/cookie-parser</u>\nCopyright (c) 2014 TJ Holowaychuk (tj@vision-media.ca)\n
+Copyright (c) 2015 Douglas Christopher Wilson (doug@somethingdoug.com)\nMIT License</string>
+    <string name="dateformat"><b>dateformat 2.0.0</b>\n<u>https://www.npmjs.com/package/dateformat</u>\nCopyright (c) 2007-2009 Steven Levithan (stevenlevithan.com)\nMIT License</string>
+    <string name="ejs"><b>ejs 2.5.7</b>\n<u>https://www.npmjs.com/package/ejs</u>\nEJS Embedded JavaScript templates copyright 2112 (mde@fleegix.org)\nApache License,Version 2.0</string>
+    <string name="express"><b>express 4.15.4</b>\n<u>http://expressjs.com/ko/</u></string>
+    <string name="express_session"><b>express-session 1.15.5</b>\n<u>https://github.com/expressjs/session</u>\nCopyright (c) 2010 Sencha Inc.\n
+Copyright (c) 2011 TJ Holowaychuk (tj@vision-media.ca)\n
+Copyright (c) 2014-2015 Douglas Christopher Wilson (doug@somethingdoug.com)\nMIT License</string>
+    <string name="iconv_lite"><b>iconv-lite 0.4.18</b>\n<u>https://www.npmjs.com/package/iconv-lite</u>\nCopyright (c) 2011 Alexander Shtuchkin\nMIT License</string>
+    <string name="jsonwebtoken"><b>jsonwebtoken 7.4.3</b>\n<u>https://github.com/auth0/node-jsonwebtoken</u>\nCopyright (c) 2015 Auth0, Inc. (support@auth0.com) (http://auth0.com)\nMIT License</string>
+    <string name="method_override"><b>method-override 2.3.9</b>\n<u>https://github.com/expressjs/method-override</u>\nCopyright (c) 2014 Jonathan Ong (me@jongleberry.com)\n
+Copyright (c) 2014 Douglas Christopher Wilson (doug@somethingdoug.com)\nMIT License</string>
+    <string name="mysql"><b>mysql 2.14.1</b>\n<u>https://www.mysql.com/</u>\nGPL License</string>
+    <string name="node_schedule"><b>node-schedule 1.2.4</b>\n<u>https://github.com/node-schedule</u>\nCopyright (C) 2015 Matt Patenaude.</string>
+    <string name="pm2"><b>pm2 2.6.1</b>\n<u>https://www.npmjs.com/package/pm2</u>\nGNU-AGPL-3.0</string>
+    <string name="random_int_array"><b>random-int-array 1.0.0</b>\n<u>https://www.npmjs.com/package/random-int-array</u></string>
+    <string name="request"><b>request 2.81.0</b>\n<u>https://www.npmjs.com/package/request</u>\nApache License</string>
+    <string name="winston"><b>winston 2.3.1</b>\n<u>https://www.npmjs.com/package/winston</u>\nCopyright (c) 2010 Charlie Robbins</string>
+    <string name="retrofit"><b>retrofit 2.3.0</b>\n<u>http://square.github.io/retrofit/</u>\nCopyright 2013 Square, Inc.</string>
+    <string name="lottie"><b>lottie 2.1.2</b>\n<u>https://airbnb.design/lottie/</u>\nBelong anywhere. © Airbnb, Inc.</string>
+    <string name="stetho"><b>stetho 1.5.0</b>\n<u>https://github.com/facebook/stetho</u>\nCopyright (c) 2015, Facebook, Inc. All rights reserved.\nBSD License</string>
+    <string name="okhttp3"><b>okhttp3 3.8.1</b>\n<u>http://square.github.io/okhttp/</u>\nCopyright 2016 Square, Inc.\nApache License</string>
+    <string name="rxandroid"><b>rxandroid 2.0.1</b>\n<u>https://github.com/ReactiveX/RxAndroid</u>\nApache License</string>
+    <string name="rxjava"><b>rxjava 2.1.2</b>\n<u>https://github.com/ReactiveX/RxJava</u>\nApache License</string>
+    <string name="lovely_dialog"><b>lovely-dialog 1.0.7</b>\n<u>https://github.com/yarolegovich/LovelyDialog</u>\nApache License</string>
 </resources>

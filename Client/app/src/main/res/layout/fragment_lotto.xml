@@ -13,6 +13,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:background="@drawable/border"
             android:orientation="horizontal">
 
             <Spinner
@@ -31,7 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_10"
-            android:background="@drawable/attr_layout_normal"
+            android:alpha="0.7"
+            android:background="@drawable/border_1"
             android:orientation="vertical"
             android:padding="@dimen/margin_20">
 
@@ -39,13 +42,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/real_lotto_winning_numbers" />
+                android:text="@string/real_lotto_winning_numbers"
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:textColor="@color/white">
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_rounds"
@@ -59,6 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/real_lotto_result"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -67,7 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/default_winning_date" />
+                android:text="@string/default_winning_date"
+                android:textColor="@color/white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -76,55 +83,63 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/winning_numbers" />
+                    android:text="@string/winning_numbers"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="@string/bonus_number" />
+                    android:text="@string/bonus_number"
+                    android:textColor="@color/white" />
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/attr_layout_numbers"
+                android:background="@drawable/border_1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_1"
                     style="@style/DefaultLottoNumberText"
-                    android:background="@drawable/attr_lotto_number_background_yellow"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_0"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_2"
                     style="@style/DefaultLottoNumberText"
-                    android:background="@drawable/attr_lotto_number_background_blue"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_10"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_3"
                     style="@style/DefaultLottoNumberText"
-                    android:background="@drawable/attr_lotto_number_background_red"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_20"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_4"
                     style="@style/DefaultLottoNumberText"
-                    android:background="@drawable/attr_lotto_number_background_green"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_30"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_5"
                     style="@style/DefaultLottoNumberText"
-                    android:background="@drawable/attr_lotto_number_background_grey"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_40"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_6"
                     style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
                     android:background="@drawable/attr_lotto_number_background_blue"
                     android:text="0" />
 
@@ -132,14 +147,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/add"
-                    app:srcCompat="@drawable/ic_add_black_24dp" />
+                    app:srcCompat="@drawable/ic_add_white_24dp" />
 
                 <TextView
                     android:id="@+id/lotto_text_real_lotto_bonus"
                     style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
                     android:background="@drawable/attr_lotto_number_background_red"
                     android:text="0" />
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/prediction_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prediction_number_click"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView

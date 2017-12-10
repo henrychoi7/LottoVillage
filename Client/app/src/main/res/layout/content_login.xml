@@ -22,21 +22,39 @@
             android:drawableStart="@drawable/ic_phone_24dp"
             android:hint="@string/phone_number"
             android:inputType="phone"
-            android:textColor="@color/white" />
+            android:textColorHint="@color/white" />
 
         <com.jjosft.android.lottovillage.base.PasswordEditText
             android:id="@+id/login_edit_password"
             style="@style/DefaultEditText"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textColor="@color/white" />
+            android:textColorHint="@color/white" />
 
-        <CheckBox
-            android:id="@+id/login_check_auto_login"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/auto_login"
-            android:textColor="@color/white" />
+            android:gravity="center"
+            android:layout_marginRight="20dp">
+
+            <CheckBox
+                android:id="@+id/login_check_auto_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:text="@string/auto_login"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/splash_button_go_to_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"
+                android:layout_marginLeft="50dp"/>
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/login_button_login"

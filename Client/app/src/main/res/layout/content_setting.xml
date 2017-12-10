@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DefaultParentLayout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.SettingActivity"
+    tools:showIn="@layout/activity_setting">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#252c36"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="푸쉬 알림"
+            android:textColor="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2f3841"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/setting_notice_event"
+                    android:layout_alignBottom="@+id/setting_notice_event"
+                    android:layout_alignParentStart="true"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
+                    android:text="이벤트 정보 알림"
+                    android:textColor="@color/white"
+                    android:textStyle="" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/setting_notice_event"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="17dp"
+                    android:checked="false"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/setting_border">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/setting_notice_result"
+                    android:layout_alignBottom="@+id/setting_notice_result"
+                    android:layout_alignParentStart="true"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
+                    android:text="빌리지 복권 결과 알림"
+                    android:textColor="@color/white"
+                    />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/setting_notice_result"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="17dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="사용자 설정"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2f3841"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/setting_modified_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="내 정보 수정"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+            <Button
+                android:id="@+id/setting_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="로그아웃"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+            <Button
+                android:id="@+id/setting_algorithm_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="알고리즘 선택"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="기타"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2f3841"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/setting_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="문의하기"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+            <Button
+                android:id="@+id/setting_security_information_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="개인정보 보호정책"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+            <Button
+                android:id="@+id/setting_opensource_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="오픈소스 라이선스"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+            <Button
+                android:id="@+id/setting_drop_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_border"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="탈퇴하기"
+                android:textColor="@color/white"
+                android:onClick="customOnClick"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

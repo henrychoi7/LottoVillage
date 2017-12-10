@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.wschd.client">
+    package="com.jjosft.android.lottovillage">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -45,6 +45,39 @@
             android:theme="@style/AppTheme.NoTitleBar" />
         <activity
             android:name=".activities.InformationActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.PointHistoryActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.ParticipationHistoryActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.PurchaseHistoryActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.SettingActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.SelectAlgorithmActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.OpenLicenseActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.SecurityInformationActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.QuestionActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.PredictNumberActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.StoreMealActivity"
+            android:theme="@style/AppTheme.NoTitleBar" />
+        <activity
+            android:name=".activities.StoreCafeActivity"
             android:theme="@style/AppTheme.NoTitleBar" />
     </application>
 
