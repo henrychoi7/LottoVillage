@@ -1,5 +1,10 @@
 $(window).ready(function() {
-    reward.init();
+    userAdmin.init();
+    // @TODO: table paging (datatables plugins)
+    // $('#example').DataTable( {
+    //     "ajax": '../ajax/data/arrays.txt'
+    // } );
+
 });
 
 // 테스트용
@@ -8,72 +13,66 @@ $(window).ready(function() {
 // var url = "http://13.124.207.144/";
 var url = "http://localhost:65004/";
 
-var reward = {
+
+var userAdmin = {
     init: function() {
         // this.drawUserTable(myJson.results);
-        this.getProductList();
+        this.getUserList();
         this.initEvent();
     },
 
     initEvent: function() {
         var _this = this;
 
-        $(document).on('click touchend','#rewardRegistBtn', this.postProductRegister);
-        $(document).on('click touchend','#deleteProduct', this.postProductDelete);
-        $(document).on('click touchend','#productUpdateBtn', this.postProductUpdate);
+        $(document).on('click touchend','.ban-btn', this.banUser);
+        $(document).on('click touchend','.details-btn', this.detailUser);
     },
 
-    drawProductTable : function(productData){
-        var viewTable = $('#productList');
+    drawUserTable : function(userData){
+        var wrapper = $('#userListTB');
+        var viewTable = wrapper.find('tbody');
         viewTable.html('');
 
-        for (var id in productData) {
-            var product = productData[id];
+        for (var id in userData) {
+            var user = userData[id];
+            var userState = '';
+            if (user.USER_STATUS == 0){
+                userState = "<td class=\"hidden-xs text-left \">\n" +
+                            "    <span class=\"label label-success\">일반</span>\n" +
+                            "    <button class=\"ban-btn btn btn-xs btn-default\" type=\"button\" data-toggle=\"tooltip\" title=\"영구 정지\"><i class=\"fa fa-close\"></i></button>\n" +
+                            "</td>";
+            } else {
+                userState = "<td class=\"hidden-xs text-left\">\n" +
+                            "    <span class=\"label label-danger\">정지</span>\n" +
+                            "</td>";
+            }
 
-            var viewProduct = $("<div class=\"col-sm-6 col-lg-3\">");
-            viewProduct
+            var viewUser = $("<tr>");
+            viewUser
                 .html(
-                    "              <a class=\"block block-link-hover3 text-center\" href=\"javascript:void(0)\">\n" +
-                    "                <div class=\"block-header\">\n" +
-                    "                  <h3 class=\"block-title\">" + product.PRODUCT_NAME + "</h3>\n" +
-                    "                </div>\n" +
-                    "                <div class=\"block-content block-content-full bg-gray-lighter\">\n" +
-                    "                  <div class=\"h1 font-w700 push-10\">" + product.PRODUCT_PRICE + "</div>\n" +
-                    "                </div>\n" +
-                    "                <div class=\"block-content\">\n" +
-                    "                  <table class=\"table table-borderless table-condensed\">\n" +
-                    "                    <tbody>\n" +
-                    "                      <tr>\n" +
-                    "                        <td>No. <strong id=\"product_code\">" + product.PRODUCT_CODE + "</strong></td>\n" +
-                    "                      </tr>\n" +
-                    "                      <tr>\n" +
-                    "                        <td>Company <strong>오리온</strong></td>\n" +
-                    "                      </tr>\n" +
-                    "                      <tr>\n" +
-                    "                        <td>Description <strong>이 상품은 ...</strong></td>\n" +
-                    "                      </tr>\n" +
-                    "                    </tbody>\n" +
-                    "                  </table>\n" +
-                    "                </div>\n" +
-                    "                <div class=\"block-content block-content-mini block-content-full bg-gray-lighter\">\n" +
-                    "                  <span class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#modifyModal\">수정</span>\n" +
-                    "                  <span id=\"deleteProduct\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#deleteModal\">삭제</span>\n" +
-                    "                </div>\n" +
-                    "              </a>\n" +
-                    "\n" +
-                    "            </div>");
-            viewTable.append(viewProduct);
+                    "        <td class=\"font-w600 text-center sorting_1\">" + user.USER_NAME + "</td>\n" +
+                    "            <td class=\"user-phone text-center\">" + user.PHONE_NUMBER + "</td>\n" +
+                    "            <td class=\"hidden-xs text-right\">" + user.USER_TOT_POINT + " p</td>\n" +
+                    "        <td class=\"hidden-xs text-center\">" + user.REGISTER_DATETIME + "</td>\n" +
+                    "        <td class=\"hidden-xs text-center\">" + user.CURRENT_DATETIME + "</td>\n" + userState +
+                    "            <td class=\"text-center\">\n" +
+                    "            <div class=\"btn-group\">\n" +
+                    "            <button class=\"details-btn btn btn-xs btn-default\" type=\"button\" data-toggle=\"tooltip\" title=\"내역 보기\">자세히 보기 <i class=\"fa fa-angle-right\"></i></button>\n" +
+                    "        </div>\n" +
+                    "        </td>\n" +
+                    "        </tr>");
+            viewTable.append(viewUser);
         }
     },
 
-    getProductList: function() {
+    getUserList: function() {
         $.ajax({
             type: "GET",
-            url: url + 'product_list',
+            url: url + 'user_list',
             dataType: "json",
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    reward.drawProductTable(resData.results);
+                    userAdmin.drawUserTable(resData.results);
                 }
             },
             error: function(request,status,error){
@@ -82,84 +81,36 @@ var reward = {
         });
     },
 
-    postProductRegister: function() {
-        var $form = $('form[name=reward-regist]');
-        var $code = $form.find('input[name=product_code]');
-        var $name = $form.find('input[name=product_name]');
-        var $price = $form.find('input[name=product_price]');
-        var $category = $form.find('input[name=product_category]');
-        var $contents = $form.find('input[name=product_contents]');
+    banUser: function() {
+        var phone = $(this).closest("tr")
+            .find(".user-phone")
+            .text();
 
         $.ajax({
             type: "POST",
-            url: url + 'product_register',
+            url: url + 'user_block',
             dataType: "json",
             data: {
-                product_code : parseInt($code.val()),
-                product_name : $name.val(),
-                product_price : parseInt($price.val()),
-                product_contents : $category.val(),
-                product_category : parseInt($contents.val())
+                phone_number : phone
             },
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    window.location.href = '/lottoVillage_productManage.html';
+                    alert('영구정지 했습니다!');
+                    window.location.href = '/lottoVillage_userManage.html';
                 }
             },
             error: function(request,status,error){
                 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                window.location.href = '/lottoVillage_userManage.html';
             }
         });
     },
 
-    postProductDelete: function() {
-        var product_code = $(this).closest("#product_code").text();
+    detailUser: function(){
+        var phone = $(this).closest("tr")
+            .find(".user-phone")
+            .text();
 
-        $.ajax({
-            type: "POST",
-            url: url + 'product_delete',
-            dataType: "json",
-            data: {
-                product_code : parseInt(product_code.val())
-            },
-            success: function(resData) {
-                if (resData.isSuccess == true){
-                    window.location.href = '/lottoVillage_productManage.html';
-                }
-            },
-            error: function(request,status,error){
-                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            }
-        });
-    },
-
-    postProductUpdate: function() {
-        var $form = $('form[name=reward-update]');
-        var $code = $form.find('input[name=product_code]');
-        var $name = $form.find('input[name=product_name]');
-        var $price = $form.find('input[name=product_price]');
-        var $category = $form.find('input[name=product_category]');
-        var $contents = $form.find('input[name=product_contents]');
-
-        $.ajax({
-            type: "POST",
-            url: url + 'product_update',
-            dataType: "json",
-            data: {
-                product_code : parseInt($code.val()),
-                product_name : $name.val(),
-                product_price : parseInt($price.val()),
-                product_contents : $category.val(),
-                product_category : parseInt($contents.val())
-            },
-            success: function(resData) {
-                if (resData.isSuccess == true){
-                    window.location.href = '/lottoVillage_productManage.html';
-                }
-            },
-            error: function(request,status,error){
-                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            }
-        });
+        window.location.href = '/lottoVillage_userDetails.html?index=' + phone;
     }
 };
