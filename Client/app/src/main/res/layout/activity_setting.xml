@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
+    android:background="#252c36"
     android:fitsSystemWindows="true"
     tools:context=".activities.SettingActivity">
 

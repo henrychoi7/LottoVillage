@@ -20,14 +20,20 @@ interface RetrofitInterface {
     @POST("register")
     fun postRegister(@Body params: RequestBody): Observable<Model.DefaultResponse>
 
+    @POST("update_user")
+    fun postUpdate(@Body params: RequestBody): Observable<Model.DefaultResponse>
+
     @POST("delete_user")
-    fun postDeleteUser(@Body params: RequestBody): Observable<Model.DefaultResponse>
+    fun postDeleteUser(): Observable<Model.DefaultResponse>
 
     @GET("my_point")
     fun getMyPoint(): Observable<Model.SingleIntResponse>
 
     @GET("lotto_rounds")
     fun getLottoRounds(): Observable<Model.SingleIntResponse>
+
+    @GET("retrieve_user_info")
+    fun getUserInfo(): Observable<Model.UserInfoResponse>
 
     @GET("details_of_lotto")
     fun getDetailsOfLotto(@Query("rounds") rounds : String): Observable<Model.LottoResponse>
@@ -61,10 +67,17 @@ interface RetrofitInterface {
     fun getDetailsOfAllProductWeb(@Query("phone_number") phoneNumber: String,
                                   @Query("event_date") eventDate: String): Observable<Model.AllProductResponse>
 
-    @GET("details_of_all_participation")
+    @GET("details_of_all_participation_web")
     fun getDetailsOfParticipationHistoryWeb(@Query("phone_number") phoneNumber: String,
                                             @Query("event_date")eventDate: String): Observable<Model.ParticipationHistoryResponse>
 
     @GET("prediction_algorithm")
     fun getPredictionAlgorithm(@Query("algorithm_type") algorithmType: String): Observable<Model.PredictionResponse>
+
+
+    @GET("product_list")
+    fun getRetrieveProductList(@Query("product_category") productCategory: String): Observable<Model.ProductListResponse>
+
+    @POST("buy_product")
+    fun postBuyProduct(@Body params: RequestBody): Observable<Model.DefaultResponse>
 }

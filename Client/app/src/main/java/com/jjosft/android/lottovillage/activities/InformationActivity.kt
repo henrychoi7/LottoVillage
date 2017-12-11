@@ -1,6 +1,8 @@
 package com.jjosft.android.lottovillage.activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -9,7 +11,6 @@ import com.jjosft.android.lottovillage.R
 import com.jjosft.android.lottovillage.base.BaseActivity
 import com.jjosft.android.lottovillage.base.BaseApplication
 import com.jjosft.android.lottovillage.model.Model
-import com.yarolegovich.lovelydialog.LovelyStandardDialog
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -17,18 +18,22 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_information.*
 import kotlinx.android.synthetic.main.content_information.*
-import kotlinx.android.synthetic.main.content_register.*
 import okhttp3.RequestBody
 import org.json.JSONObject
 
 class InformationActivity : BaseActivity() {
     private val mCompositeDisposable: CompositeDisposable = CompositeDisposable()
+    private val mSharedPreferences: SharedPreferences by lazy {
+        getSharedPreferences(BaseApplication.LOTTO_VILLAGE_PREFERENCES, Context.MODE_PRIVATE)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
         setSupportActionBar(information_toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        retrieveUserInfo()
     }
 
     override fun onStop() {
@@ -41,42 +46,37 @@ class InformationActivity : BaseActivity() {
             R.id.information_button_update -> {
                 validateUpdate()
             }
-            R.id.information_button_cancel ->startActivity(Intent(applicationContext,MainActivity::class.java))
+            R.id.information_button_cancel -> startActivity(Intent(applicationContext, MainActivity::class.java))
         }
     }
 
+    /**
+     * 입력된 유저정보를 업데이트하기 전 validation 을 거친 후 네트워크 통신하는 함수
+     */
     private fun validateUpdate() {
         if (isDeniedValueValidation(information_edit_name)) return
         if (isDeniedValueValidation(information_edit_password)) return
         if (isDeniedValueValidation(information_edit_new_password)) return
         if (isDeniedValueValidation(information_edit_password_confirm)) return
-        //if (isDeniedValueValidation(register_edit_confirm_certified)) return
 
         val jsonObject = JSONObject()
         jsonObject.put("name", information_edit_name.text.toString())
         jsonObject.put("password", information_edit_new_password.text.toString())
         jsonObject.put("password_confirm", information_edit_password_confirm.text.toString())
-        //jsonObject.put("phone_number", register_edit_phone_number.text.toString())
 
-        BaseApplication.getInstance().getRetrofitMethod().postRegister(RequestBody.create(BaseApplication.MEDIA_TYPE_JSON, jsonObject.toString()))
+        BaseApplication.getInstance().getRetrofitMethod().postUpdate(RequestBody.create(BaseApplication.MEDIA_TYPE_JSON, jsonObject.toString()))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<Model.DefaultResponse> {
+                    private var isSuccess = false
+
                     override fun onSubscribe(d: Disposable) {
                         mCompositeDisposable.add(d)
                         progressOn(getString(R.string.send_to_request_update))
                     }
 
                     override fun onNext(t: Model.DefaultResponse) {
-                        if (t.isSuccess) {
-                            Toast.makeText(applicationContext, getString(R.string.complete_to_update), Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(applicationContext, LoginActivity::class.java)
-                                    .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-                                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK) // 기존에 쌓여있던 스택을 모두 없앤다.
-                                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) // 새로 생성한 엑티비티가 root 가 된다.
-                        } else {
-                            Toast.makeText(applicationContext, t.errorMessage, Toast.LENGTH_SHORT).show()
-                        }
+                        isSuccess = t.isSuccess
                     }
 
                     override fun onError(e: Throwable) {
@@ -86,10 +86,23 @@ class InformationActivity : BaseActivity() {
 
                     override fun onComplete() {
                         progressOff()
+                        if (isSuccess) {
+                            val sharedPreferencesEditor = mSharedPreferences.edit()
+                            sharedPreferencesEditor.putBoolean(BaseApplication.AUTO_LOGIN, false)
+                            sharedPreferencesEditor.putStringSet(BaseApplication.X_ACCESS_TOKEN, null)
+                            sharedPreferencesEditor.apply()
+
+                            Toast.makeText(applicationContext, getString(R.string.complete_to_update), Toast.LENGTH_SHORT).show()
+                            finish()
+                        }
+
                     }
                 })
     }
 
+    /**
+     * 기본으로 만든 기초 validation 함수
+     */
     private fun isDeniedValueValidation(targetEditText: EditText): Boolean {
         val targetValueString = targetEditText.text.toString()
         if (targetValueString.isEmpty()) {
@@ -117,13 +130,42 @@ class InformationActivity : BaseActivity() {
                     targetEditText.requestFocus()
                     targetEditText.error = getString(R.string.unmatched_password)
                     return true
-                } else if(information_edit_password.text.toString() == information_edit_new_password.text.toString()){
+                } else if (information_edit_password.text.toString() == information_edit_new_password.text.toString()) {
                     targetEditText.requestFocus()
-                    targetEditText.error=getString(R.string.unmatched_last_password)
+                    targetEditText.error = getString(R.string.unmatched_last_password)
                     return true
                 }
             }
         }
         return false
+    }
+
+    /**
+     * 유저의 이름을 불러오기위해 만든 함수
+     */
+    private fun retrieveUserInfo() {
+        BaseApplication.getInstance().getRetrofitMethod().getUserInfo()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : Observer<Model.UserInfoResponse> {
+                    override fun onSubscribe(d: Disposable) {
+                        mCompositeDisposable.add(d)
+                    }
+
+                    override fun onNext(t: Model.UserInfoResponse) {
+                        if (t.isSuccess) {
+                            information_edit_name.setText(t.name)
+                        }
+                    }
+
+                    override fun onError(e: Throwable) {
+                        Toast.makeText(applicationContext, "실패 ${e.message}", Toast.LENGTH_SHORT).show()
+                        BaseApplication.getInstance().progressOff()
+                        mCompositeDisposable.clear()
+                    }
+
+                    override fun onComplete() {
+                    }
+                })
     }
 }

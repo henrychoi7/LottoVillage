@@ -13,7 +13,7 @@ import com.jjosft.android.lottovillage.base.BaseApplication
 
 class SplashActivity : BaseActivity() {
 
-    private val Splash_screen = 2000;
+    private val Splash_screen = 300
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

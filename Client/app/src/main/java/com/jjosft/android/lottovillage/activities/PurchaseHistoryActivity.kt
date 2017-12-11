@@ -36,9 +36,9 @@ class PurchaseHistoryActivity : BaseActivity() {
 
         val monthAdapter = ArrayAdapter<String>(applicationContext, R.layout.spinner_lotto, resources.getStringArray(R.array.months))
         purchase_history_spinner_month.adapter = monthAdapter
-        purchase_history_spinner_month.setSelection(0)
+        purchase_history_spinner_month.setSelection(11)
 
-        retrievePurchaseHistory(purchase_history_spinner_year.selectedItem.toString()+purchase_history_spinner_month.selectedItem.toString())
+        retrievePurchaseHistory(purchase_history_spinner_year.selectedItem.toString() + purchase_history_spinner_month.selectedItem.toString())
     }
 
     override fun onStop() {
@@ -53,7 +53,7 @@ class PurchaseHistoryActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.setting_black ->{
+            R.id.setting_black -> {
                 startActivity(Intent(applicationContext, SettingActivity::class.java))
                 true
             }
@@ -64,12 +64,18 @@ class PurchaseHistoryActivity : BaseActivity() {
     fun customOnClick(view: View) {
         when (view.id) {
             R.id.purchase_history_button_retrieve -> {
-                retrievePurchaseHistory(purchase_history_spinner_year.selectedItem.toString()+purchase_history_spinner_month.selectedItem.toString())}
+                retrievePurchaseHistory(purchase_history_spinner_year.selectedItem.toString() + purchase_history_spinner_month.selectedItem.toString())
+            }
         }
     }
 
+    /**
+     * 상품 구매내역을 불러오는 구간
+     * 테스트를 위해 실제 유용한 데이터가 한 아이디에만 넣어놨기때문에 일단은 파라미터로 전화번호를 고정시켜놓음
+     * 실제 런칭때는 이미 다 구축해놓은 토큰시스템을 이용해서 체크 할 예정 (모바일 클라단, 웹 서버단에 소스 모두 존재)
+     */
     private fun retrievePurchaseHistory(eventDate: String) {
-        BaseApplication.getInstance().getRetrofitMethod().getDetailsOfAllProductWeb("010-8759-6912","1709")
+        BaseApplication.getInstance().getRetrofitMethod().getDetailsOfAllProductWeb("010-8759-6912", eventDate)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<Model.AllProductResponse> {

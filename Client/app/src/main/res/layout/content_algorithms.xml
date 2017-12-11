@@ -10,7 +10,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/margin_20">
 
@@ -23,6 +24,13 @@
             android:background="@drawable/border_1"
             android:orientation="vertical"
             android:padding="@dimen/margin_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="실제 로또 분석 알고리즘 기반"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,42 +66,42 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lotto_prediction_1"
+                    android:id="@+id/lotto_prediction_1_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/ball_0"
                     android:text="0" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_2"
+                    android:id="@+id/lotto_prediction_2_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/ball_10"
                     android:text="0" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_3"
+                    android:id="@+id/lotto_prediction_3_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/ball_20"
                     android:text="0" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_4"
+                    android:id="@+id/lotto_prediction_4_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/ball_30"
                     android:text="0" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_5"
+                    android:id="@+id/lotto_prediction_5_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/ball_40"
                     android:text="0" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_6"
+                    android:id="@+id/lotto_prediction_6_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/attr_lotto_number_background_blue"
@@ -106,7 +114,7 @@
                     app:srcCompat="@drawable/ic_add_white_24dp" />
 
                 <TextView
-                    android:id="@+id/lotto_prediction_bonus"
+                    android:id="@+id/lotto_prediction_bonus_1"
                     style="@style/DefaultLottoNumberText"
                     android:layout_height="35dp"
                     android:background="@drawable/attr_lotto_number_background_red"
@@ -115,5 +123,111 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:alpha="0.7"
+            android:background="@drawable/border_1"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="로또빌리지 내부 추천 기능 통한"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/prediction_number"
+                android:textColor="@color/white" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prediction_numbers"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/bonus_number"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lotto_prediction_1_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_0"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_2_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_10"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_3_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_20"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_4_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_30"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_5_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ball_40"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_6_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/attr_lotto_number_background_blue"
+                    android:text="0" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add"
+                    app:srcCompat="@drawable/ic_add_white_24dp" />
+
+                <TextView
+                    android:id="@+id/lotto_prediction_bonus_2"
+                    style="@style/DefaultLottoNumberText"
+                    android:layout_height="35dp"
+                    android:background="@drawable/attr_lotto_number_background_red"
+                    android:text="0" />
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

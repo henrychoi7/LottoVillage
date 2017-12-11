@@ -6,7 +6,7 @@ import com.jjosft.android.lottovillage.base.BaseActivity
 import io.reactivex.disposables.CompositeDisposable
 
 /**
- * Created by dahyun on 2017-12-05.
+ * 사용한 라이브러리의 라이센스에 위반되지 않도록 하기위해 만든 엑티비티
  */
 class OpenLicenseActivity : BaseActivity() {
     private val mCompositeDisposable: CompositeDisposable = CompositeDisposable()

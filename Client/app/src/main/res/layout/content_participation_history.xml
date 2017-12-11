@@ -49,11 +49,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Spinner
+        <!--<Spinner
             android:id="@+id/participation_history_spinner_day"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1" />-->
 
         <Button
             android:id="@+id/participation_history_button_retrieve"
@@ -61,6 +61,34 @@
             android:layout_marginStart="@dimen/margin_10"
             android:onClick="customOnClick"
             android:text="@string/retrieve" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="참여 시간" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="당첨 여부" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="당첨 금액" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

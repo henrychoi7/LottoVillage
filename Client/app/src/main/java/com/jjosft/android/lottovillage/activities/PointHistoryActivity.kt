@@ -36,7 +36,7 @@ class PointHistoryActivity : BaseActivity() {
 
         val monthAdapter = ArrayAdapter<String>(applicationContext, R.layout.spinner_lotto, resources.getStringArray(R.array.months))
         point_history_spinner_month.adapter = monthAdapter
-        point_history_spinner_month.setSelection(0)
+        point_history_spinner_month.setSelection(11)
 
         retrievePointHistory(point_history_spinner_year.selectedItem.toString() + point_history_spinner_month.selectedItem.toString())
     }
@@ -62,7 +62,7 @@ class PointHistoryActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.setting_black ->{
+            R.id.setting_black -> {
                 startActivity(Intent(applicationContext, SettingActivity::class.java))
                 true
             }
@@ -70,8 +70,12 @@ class PointHistoryActivity : BaseActivity() {
         }
     }
 
+    /** 포인트 내역을 불러오는 구간
+     * 테스트를 위해 실제 유용한 데이터가 한 아이디에만 넣어놨기때문에 일단은 파라미터로 전화번호를 고정시켜놓음
+     * 실제 런칭때는 이미 다 구축해놓은 토큰시스템을 이용해서 체크 할 예정 (모바일 클라단, 웹 서버단에 소스 모두 존재)
+     */
     private fun retrievePointHistory(savingTime: String) {
-        BaseApplication.getInstance().getRetrofitMethod().getDetailsOfPointHistoryWeb("010-8759-6912",savingTime)
+        BaseApplication.getInstance().getRetrofitMethod().getDetailsOfPointHistoryWeb("010-8759-6912", savingTime)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<Model.PointHistoryResponse> {

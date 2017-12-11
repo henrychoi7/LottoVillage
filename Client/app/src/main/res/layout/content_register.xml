@@ -23,22 +23,19 @@
                 android:id="@+id/register_edit_name"
                 style="@style/DefaultEditText"
                 android:hint="@string/name"
-                android:inputType="text"
-                android:textColorHint="@color/white" />
+                android:inputType="text" />
 
             <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/register_edit_password"
                 style="@style/DefaultEditText"
                 android:hint="@string/password"
-                android:inputType="textPassword"
-                android:textColorHint="@color/white" />
+                android:inputType="textPassword" />
 
             <com.jjosft.android.lottovillage.base.PasswordEditText
                 android:id="@+id/register_edit_password_confirm"
                 style="@style/DefaultEditText"
                 android:hint="@string/confirm_password"
-                android:inputType="textPassword"
-                android:textColorHint="@color/white" />
+                android:inputType="textPassword" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,7 +50,6 @@
                     android:drawableStart="@drawable/ic_phone_24dp"
                     android:hint="@string/phone_number"
                     android:inputType="phone"
-                    android:textColorHint="@color/white"
                     tools:ignore="TextFields" />
 
                 <Button
@@ -80,8 +76,7 @@
                     style="@style/DefaultEditText"
                     android:layout_weight="2"
                     android:drawableStart="@drawable/ic_verified_user_24dp"
-                    android:hint="@string/confirm_certified"
-                    android:textColorHint="@color/white" />
+                    android:hint="@string/confirm_certified" />
 
                 <Button
                     android:id="@+id/register_button_confirm_certified"

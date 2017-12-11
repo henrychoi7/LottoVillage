@@ -12,12 +12,12 @@ import com.jjosft.android.lottovillage.model.Model
 /**
  * Created by JJSOFT-DESKTOP on 2017-09-04.
  */
-class PurchaseHistoryAdapter(private val mContext:Context,private val mDetailOfPurchaseHistory:ArrayList<Model.DetailsOfAllProduct>) : RecyclerView.Adapter<PurchaseHistoryAdapter.ViewHolder>() {
+class PurchaseHistoryAdapter(private val mContext: Context, private val mDetailOfPurchaseHistory: ArrayList<Model.DetailsOfAllProduct>) : RecyclerView.Adapter<PurchaseHistoryAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val purchaseHistoryTextViewDateTime:TextView=view.findViewById(R.id.purchase_history_date_time)
-        val purchaseHistoryTextViewContents:TextView=view.findViewById(R.id.purchase_history_contents)
-        val purchaseHistoryTextViewPoint:TextView=view.findViewById(R.id.purchase_history_point)
+        val purchaseHistoryTextViewDateTime: TextView = view.findViewById(R.id.purchase_history_date_time)
+        val purchaseHistoryTextViewContents: TextView = view.findViewById(R.id.purchase_history_contents)
+        val purchaseHistoryTextViewPoint: TextView = view.findViewById(R.id.purchase_history_point)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PurchaseHistoryAdapter.ViewHolder {
@@ -26,10 +26,10 @@ class PurchaseHistoryAdapter(private val mContext:Context,private val mDetailOfP
     }
 
     override fun onBindViewHolder(holder: PurchaseHistoryAdapter.ViewHolder, position: Int) {
-        val detailsOfPurchaseHistory=mDetailOfPurchaseHistory[position]
-        holder.purchaseHistoryTextViewDateTime.text=detailsOfPurchaseHistory.dateTime
-        holder.purchaseHistoryTextViewContents.text=detailsOfPurchaseHistory.contents
-        holder.purchaseHistoryTextViewPoint.text=detailsOfPurchaseHistory.point
+        val detailsOfPurchaseHistory = mDetailOfPurchaseHistory[position]
+        holder.purchaseHistoryTextViewDateTime.text = detailsOfPurchaseHistory.dateTime
+        holder.purchaseHistoryTextViewContents.text = detailsOfPurchaseHistory.contents
+        holder.purchaseHistoryTextViewPoint.text = detailsOfPurchaseHistory.point
     }
 
     override fun getItemCount(): Int {

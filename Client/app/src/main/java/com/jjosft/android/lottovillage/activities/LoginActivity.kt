@@ -33,8 +33,9 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-        // SharedPreferences 를 통하여 자동로그인 여부 확인
+        /**
+         * SharedPreferences 를 통하여 자동로그인 여부 확인
+         */
         mIsCheckedAutoLogin = mSharedPreferences.getBoolean(BaseApplication.AUTO_LOGIN, false)
         login_check_auto_login.isChecked = mIsCheckedAutoLogin
 
@@ -55,6 +56,10 @@ class LoginActivity : BaseActivity() {
         }
     }
 
+    /**
+     * 입력된 전화번호와 비밀번호를 jsonObject 에 담아서 네트워크 통신하는 함수
+     * 테스트를 용이하게 하기위해 validation 소스는 짜고 주석처리를 해놓음
+     */
     private fun validateLogin() {
         //val tokensStringSet: HashSet<String> = mSharedPreferences.getStringSet(BaseApplication.X_ACCESS_TOKEN, HashSet()) as HashSet<String>
         val jsonObject = JSONObject()

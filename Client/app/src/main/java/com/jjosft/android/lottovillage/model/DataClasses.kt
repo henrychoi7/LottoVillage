@@ -9,6 +9,8 @@ import com.google.gson.annotations.SerializedName
 object Model {
     data class DefaultResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String)
 
+    data class UserInfoResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("name") val name: String)
+
     data class ParticipationResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfParticipation: ArrayList<DetailsOfParticipation>)
     data class DetailsOfParticipation(@SerializedName("EVENT_TYPE") val eventType: String, @SerializedName("WINNING_NUMBER_1") val winningNumber1: Int, @SerializedName("WINNING_NUMBER_2") val winningNumber2: Int,
                                       @SerializedName("WINNING_NUMBER_3") val winningNumber3: Int, @SerializedName("WINNING_NUMBER_4") val winningNumber4: Int,
@@ -34,16 +36,27 @@ object Model {
     data class SingleIntResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val results: Int)
     //추가한 부분 11/27
     data class AllProductResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfAllProduct: ArrayList<DetailsOfAllProduct>)
+
     data class DetailsOfAllProduct(@SerializedName("DATE_TIME") val dateTime: String, @SerializedName("CONTENTS") val contents: String, @SerializedName("POINT") val point: String)
 
-    data class PointHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean,@SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfPointHistory:ArrayList<DetailsOfPointHistory>)
-    data class DetailsOfPointHistory(@SerializedName("DATE_TIME") val dateTime:String,@SerializedName("CONTENTS") val contents:String,@SerializedName("POINT") val point:String)
+    data class PointHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfPointHistory: ArrayList<DetailsOfPointHistory>)
+    data class DetailsOfPointHistory(@SerializedName("DATE_TIME") val dateTime: String, @SerializedName("CONTENTS") val contents: String, @SerializedName("POINT") val point: String)
 
-    data class ParticipationHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean,@SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfAllParticipation:ArrayList<DetailsOfParticipationHistory>)
-    data class DetailsOfParticipationHistory(@SerializedName("DATE_TIME") val dateTime:String,@SerializedName("CONTENTS") val contents:String,@SerializedName("POINT") val point:String)
+    data class ParticipationHistoryResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfAllParticipation: ArrayList<DetailsOfParticipationHistory>)
+    data class DetailsOfParticipationHistory(@SerializedName("DATE_TIME") val dateTime: String, @SerializedName("CONTENTS") val contents: String, @SerializedName("POINT") val point: String)
 
-    data class PredictionResponse(@SerializedName("isSuccess") val isSuccess: Boolean,@SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfPrediction:DetailsOfPrediction)
-    data class DetailsOfPrediction(@SerializedName("requestPredictionNumber1") val predictionNumber1:Int,@SerializedName("requestPredictionNumber2") val predictionNumber2:Int,@SerializedName("requestPredictionNumber3") val predictionNumber3:Int,
-                                   @SerializedName("requestPredictionNumber4") val predictionNumber4:Int,@SerializedName("requestPredictionNumber5") val predictionNumber5:Int,@SerializedName("requestPredictionNumber6") val predictionNumber6:Int,@SerializedName("requestBonusNumber") val bonusNumber:Int)
+    data class PredictionResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("errorMessage") val errorMessage: String, @SerializedName("results") val detailsOfPrediction: DetailsOfPrediction)
+    data class DetailsOfPrediction(@SerializedName("requestPredictionNumber1") val predictionNumber1: Int, @SerializedName("requestPredictionNumber2") val predictionNumber2: Int, @SerializedName("requestPredictionNumber3") val predictionNumber3: Int,
+                                   @SerializedName("requestPredictionNumber4") val predictionNumber4: Int, @SerializedName("requestPredictionNumber5") val predictionNumber5: Int, @SerializedName("requestPredictionNumber6") val predictionNumber6: Int, @SerializedName("requestBonusNumber") val bonusNumber: Int)
 
+    /**
+     * 상점 물품 조회 데이터 클래스
+     */
+    data class ProductListResponse(@SerializedName("isSuccess") val isSuccess: Boolean, @SerializedName("results") val detailsOfProductList: ArrayList<DetailsOfProductList>)
+
+    data class DetailsOfProductList(@SerializedName("PRODUCT_CODE") val productCode: Int,
+                                    @SerializedName("PRODUCT_NAME") val productName: String,
+                                    @SerializedName("PRODUCT_PRICE") val productPrice: Int,
+                                    @SerializedName("PRODUCT_STATUS") val productStatus: String,
+                                    @SerializedName("PRODUCT_CONTENTS") val productContents: String)
 }

@@ -68,16 +68,10 @@
             android:name=".activities.SecurityInformationActivity"
             android:theme="@style/AppTheme.NoTitleBar" />
         <activity
-            android:name=".activities.QuestionActivity"
-            android:theme="@style/AppTheme.NoTitleBar" />
-        <activity
             android:name=".activities.PredictNumberActivity"
             android:theme="@style/AppTheme.NoTitleBar" />
         <activity
-            android:name=".activities.StoreMealActivity"
-            android:theme="@style/AppTheme.NoTitleBar" />
-        <activity
-            android:name=".activities.StoreCafeActivity"
+            android:name=".activities.StoreDetailActivity"
             android:theme="@style/AppTheme.NoTitleBar" />
     </application>
 

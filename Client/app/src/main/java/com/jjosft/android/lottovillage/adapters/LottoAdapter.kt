@@ -9,9 +9,6 @@ import android.widget.TextView
 import com.jjosft.android.lottovillage.R
 import com.jjosft.android.lottovillage.model.Model
 
-/**
- * Created by JJSOFT-DESKTOP on 2017-09-04.
- */
 class LottoAdapter(private val mLottoData: Model.DetailsOfLotto) : RecyclerView.Adapter<LottoAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val lottoTextViewNumberPrize: TextView = view.findViewById(R.id.lotto_text_number_prize)

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/DefaultParentLayout"
+    android:background="#252c36"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.SettingActivity"
     tools:showIn="@layout/activity_setting">
@@ -115,17 +116,6 @@
                 android:gravity="fill_vertical"
                 android:paddingLeft="20dp"
                 android:text="로그아웃"
-                android:textColor="@color/white"
-                android:onClick="customOnClick"/>
-
-            <Button
-                android:id="@+id/setting_algorithm_select"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/setting_border"
-                android:gravity="fill_vertical"
-                android:paddingLeft="20dp"
-                android:text="알고리즘 선택"
                 android:textColor="@color/white"
                 android:onClick="customOnClick"/>
         </LinearLayout>

@@ -51,6 +51,10 @@ class RegisterActivity : BaseActivity() {
         register_edit_confirm_certified.setText(certifiedNumber)
     }
 
+    /**
+     * 문자 인증 서비스 보내기 및 SharedPreferences 에 저장 해 놓은 인증번호를 바탕으로 매칭되는지 확인 하는 기능이 있음
+     * SmsBroadcastReceiver 를 통해 문자를 받았을시 자동으로 화면에 뿌려주는 서비스 구현
+     */
     fun customOnClick(view: View) {
         when (view.id) {
             R.id.register_button_certified -> {
@@ -87,6 +91,9 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
+    /**
+     * 인증 번호 검토
+     */
     private fun validateCertified() {
         val certifiedNumber = mSharedPreferences.getString(BaseApplication.CERTIFIED_NUMBER, null)
         if (certifiedNumber == null || register_edit_confirm_certified.text.toString() != certifiedNumber) {
@@ -102,6 +109,9 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
+    /**
+     * 문자 보내기
+     */
     private fun sendSms() {
         val smsManager = SmsManager.getDefault()
         val sentIntent = PendingIntent.getBroadcast(this, 0, Intent("SMS_SENT_ACTION"), 0)
@@ -122,12 +132,21 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
+    /**
+     * 문자 인증번호에 쓰일 번호 랜덤으로 생성
+     */
     private fun randomRange(from: Int, to: Int): Int {
         return ((Math.random() * (to - from + 1)) + from).toInt()
     }
 
+    /**
+     * 핸드폰 번호가 올바른지 확인하는 정규식 validation 함수
+     */
     private fun validatePhoneNumber(phoneNumberString: String): Boolean = Pattern.matches("^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}\$", phoneNumberString)
 
+    /**
+     * 회원가입을 위한 validation 및 네트워크 통신 함수
+     */
     private fun validateRegister() {
         if (isDeniedValueValidation(register_edit_name)) return
         if (isDeniedValueValidation(register_edit_password)) return
@@ -180,6 +199,9 @@ class RegisterActivity : BaseActivity() {
                 })
     }
 
+    /**
+     * 기본 validation 함수
+     */
     private fun isDeniedValueValidation(targetEditText: EditText): Boolean {
         val targetValueString = targetEditText.text.toString()
         if (targetValueString.isEmpty()) {

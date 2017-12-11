@@ -10,7 +10,8 @@ import com.jjosft.android.lottovillage.activities.RegisterActivity
 
 
 /**
- * Created by JJSOFT-DESKTOP on 2017-08-15.
+ * 문자 인증 서비스 보내기 및 SharedPreferences 에 저장 해 놓은 인증번호를 바탕으로 매칭되는지 확인 하는 기능이 있음
+ * SmsBroadcastReceiver 를 통해 문자를 받았을시 자동으로 화면에 뿌려주는 서비스 구현
  */
 class SmsBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

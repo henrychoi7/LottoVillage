@@ -33,11 +33,11 @@ class  PointHistoryAdapter(private val mContext: Context, private val mDetailsOf
         when (detailsOfPointHistory.contents) {
             "+" -> {
                 holder.pointHistoryTextViewPoint.setTextColor(ContextCompat.getColor(mContext, R.color.blue))
-                holder.pointHistoryTextViewPoint.text = "+ ${detailsOfPointHistory.point}P"
+                holder.pointHistoryTextViewPoint.text = "+${detailsOfPointHistory.point}"
             }
             "-" -> {
                 holder.pointHistoryTextViewPoint.setTextColor(ContextCompat.getColor(mContext, R.color.red))
-                holder.pointHistoryTextViewPoint.text = "- ${detailsOfPointHistory.point}P"
+                holder.pointHistoryTextViewPoint.text = detailsOfPointHistory.point
             }
         }
     }

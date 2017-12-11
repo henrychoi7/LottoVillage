@@ -5,7 +5,7 @@
     <string name="register">회원가입</string>
     <string name="my_info">내정보</string>
     <string name="point_usage_history">포인트 이용내역</string>
-    <string name="lotto_participation_history">LottoVillage 참가 내역</string>
+    <string name="lotto_participation_history">로또빌리지 참가 내역</string>
     <string name="product_purchase_history">상품 구매내역</string>
 
     <!-- Common Strings -->
@@ -59,7 +59,7 @@
     <string name="total_prize">등위별 총 당첨금액</string>
     <string name="total_number">당첨게임 수</string>
     <string name="per_prize">1게임당 당첨금액</string>
-    <string name="prediction_number_click">예상 번호 추천 받기 ></string>
+    <string name="prediction_number_click">예상 번호 추천 받기</string>
     <string name="prediction_number">예상 번호 추천 받기</string>
     <string name="prediction_numbers">예상 번호</string>
 
