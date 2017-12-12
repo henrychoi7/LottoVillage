@@ -5,8 +5,8 @@
  */
 
 // var url = "http://localhost:65004/";
-// var url = "http://192.9.44.53:65004/";
-var url = "http://203.249.127.32:65004/";
+var url = "http://192.9.44.53:65004/";
+// var url = "http://203.249.127.32:65004/";
 
 var weekDate = [];
 var week1 = [];
