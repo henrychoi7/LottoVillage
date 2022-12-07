@@ -20,7 +20,7 @@
     "cookie-parser": "^1.4.3",
     "dateformat": "^2.0.0",
     "ejs": "^2.5.7",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.5",
     "iconv-lite": "^0.4.18",
     "jsonwebtoken": "^7.4.3",
